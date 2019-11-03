@@ -71,6 +71,7 @@ Mengenbeweise
 \begin{solution}[a]
 Beweise oder widerlege: Für alle Mengen A und B gilt: \( (A \cap B) \cap A = B \cap A \)
 
+Wir beweisen die Aussage. Seien A, B beliebige Mengen.
 \begin{align*}
     & (A \cap B) \cap A = B \cap A \\
     & \overset{\mathrm{Def. \cap}}{=} \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
@@ -80,6 +81,48 @@ Beweise oder widerlege: Für alle Mengen A und B gilt: \( (A \cap B) \cap A = B 
     & \overset{\mathrm{Def. Idem. und}}{=} \set{x \mid x \in B \land x \in A} \\
     & \overset{\mathrm{Def. \cap}}{=} B \cap A \\
 \end{align*}
+
+Somit gilt die Aussage.
+
+\end{solution}
+
+\begin{solution}[b]
+Beweise oder widerlege: Für alle Mengen A und B gilt: \( A \cup (A \setminus B ) = A  \)
+
+Wir beweisen die Aussage. Seien A, B beliebige Mengen.
+\begin{align*}
+    & A \cup (A \setminus B ) = A \\
+    & \overset{\mathrm{Def. \cup}}{=} \set{x \mid x \in A \lor x \in (A \setminus B)} \\
+    & \overset{\mathrm{Def. \setminus}}{=} \set{x \mid x \in A \lor x \in \set{y \mid y \in A \land y \notin B}} \\
+    & \overset{\mathrm{Def. \in}}{=} \set{x \mid x \in A \lor (x \in A \land x \notin B)} \\
+    & \overset{\mathrm{Def. Distri.}}{=} \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
+    & \overset{\mathrm{Def. Idem. oder}}{=} \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
+    & \overset{\mathrm{Def. Absorp.}}{=} \set{x \mid x \in A} \\
+    & \overset{\mathrm{Def. \in}}{=} A \\
+\end{align*}
+
+Somit gilt die Aussage.
+
+\end{solution}
+
+\begin{solution}[c]
+Beweise oder widerlege: Für alle Mengen A und B gilt: \( (B \cup A) \cap B = A \cap B \)
+
+Wir widerlegen die Aussage durch Angabe eines geeigneten Gegenbeispiels.
+
+Wir wählen \( A \triangleq \set{1,2}, B \triangleq \set{2,3} \).
+
+\begin{align*}
+    & (B \cup A) \cap B  \\
+    &= (\set{2,3} \cup \set{1,2}) \cap \set{2,3}  \\
+    & \overset{\mathrm{Def. \cup}}{=} \set{1,2,3} \cap \set{2,3}  \\
+    &= \set{2,3} \\
+    & \neq \set{2}  \\
+    & \overset{\mathrm{Def. \cap}}{=} \set{1,2} \cap \set{2,3}  \\
+    &= A \cap B \\
+\end{align*}
+
+Somit gilt die Aussage nicht.
 
 \end{solution}
 
