@@ -12,6 +12,8 @@
    
 \DeclarePairedDelimiter\set\{\}
 
+\newcommand\customeq[1]{\overset{\mathrm{#1}}{=}}
+
 \newtheorem{theorem}{Theorem}
 \theoremstyle{definition} 
 \newtheorem{problem}[theorem]{Aufgabe}
@@ -43,10 +45,10 @@ Berechne: \( (( \set{1,3} \times \set{1} )) \cup \set{1, 3, 1 } \setminus \set{(
 
 \begin{align*}
     M &= (( \set{1,3} \times \set{1} )) \cup \set{1, 3, 1 } \setminus \set{(1,3), 1,2} \\
-    & \overset{\mathrm{Def. \times}}{=} (\set{(1,1), (3,1)} \cup \set{1,3,1} \setminus \set{(1,3),1,2}) \\
+    & \customeq{Def. \times} (\set{(1,1), (3,1)} \cup \set{1,3,1} \setminus \set{(1,3),1,2}) \\
     % hier fehlt vielleicht noch die reduktion von {1,3,1} zu  {1,3} (?)
-    & \overset{\mathrm{Def. \cup}}{=} (\set{(1,1),(3,1),1,3} \setminus \set{(1,3),1,2}) \\
-    & \overset{\mathrm{Def. \setminus}}{=} \set{(1,1),(3,1),3}
+    & \customeq{Def. \cup} (\set{(1,1),(3,1),1,3} \setminus \set{(1,3),1,2}) \\
+    & \customeq{Def. \setminus} \set{(1,1),(3,1),3}
 \end{align*}
 
 \end{solution}
@@ -57,9 +59,9 @@ Berechne: \( ( \set{\emptyset,2} \cup \set{\set{\emptyset}}) \cap \mathcal{P} (\
 \begin{align*}
     % Das P sieht eigentlich anders aus (?)
     M &= ( \set{\emptyset,2} \cup \set{\set{\emptyset}}) \cap \mathcal{P} (\set{ \set{\emptyset}, 2}) \\
-    & \overset{\mathrm{Def. \cup}}{=} \set{\emptyset, \set{\emptyset}, 2} \cap \mathcal{P} (\set{ \set{\emptyset}, 2}) \\
-    & \overset{\mathrm{Def. \mathcal{P}}}{=} \set{\emptyset, \set{\emptyset}, 2} \cap \set{\emptyset, \set{\set{\emptyset}}, \set{2}, \set{\set{\emptyset}, 2}} \\
-    & \overset{\mathrm{Def. \cap}}{=} \set{\emptyset}
+    & \customeq{Def. \cup} \set{\emptyset, \set{\emptyset}, 2} \cap \mathcal{P} (\set{ \set{\emptyset}, 2}) \\
+    & \customeq{Def. \mathcal{P}} \set{\emptyset, \set{\emptyset}, 2} \cap \set{\emptyset, \set{\set{\emptyset}}, \set{2}, \set{\set{\emptyset}, 2}} \\
+    & \customeq{Def. \cap} \set{\emptyset}
 \end{align*}
 
 \end{solution}
@@ -74,12 +76,12 @@ Beweise oder widerlege: Für alle Mengen A und B gilt: \( (A \cap B) \cap A = B 
 Wir beweisen die Aussage. Seien A, B beliebige Mengen.
 \begin{align*}
     & (A \cap B) \cap A = B \cap A \\
-    & \overset{\mathrm{Def. \cap}}{=} \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
-    & \overset{\mathrm{Def. Komm.}}{=} \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
-    & \overset{\mathrm{Def. \in}}{=} \set{x \mid (x \in B \land x \in A) \land x \in A} \\
-    & \overset{\mathrm{Def. Assoz}}{=} \set{x \mid x \in B \land (x \in A \land x \in A)} \\
-    & \overset{\mathrm{Def. Idem. und}}{=} \set{x \mid x \in B \land x \in A} \\
-    & \overset{\mathrm{Def. \cap}}{=} B \cap A \\
+    & \customeq{Def. \cap} \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
+    & \customeq{Def. Komm.} \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
+    & \customeq{Def. \in} \set{x \mid (x \in B \land x \in A) \land x \in A} \\
+    & \customeq{Def. Assoz} \set{x \mid x \in B \land (x \in A \land x \in A)} \\
+    & \customeq{Def. Idem. und} \set{x \mid x \in B \land x \in A} \\
+    & \customeq{Def. \cap} B \cap A \\
 \end{align*}
 
 Somit gilt die Aussage.
@@ -92,13 +94,13 @@ Beweise oder widerlege: Für alle Mengen A und B gilt: \( A \cup (A \setminus B 
 Wir beweisen die Aussage. Seien A, B beliebige Mengen.
 \begin{align*}
     & A \cup (A \setminus B ) = A \\
-    & \overset{\mathrm{Def. \cup}}{=} \set{x \mid x \in A \lor x \in (A \setminus B)} \\
-    & \overset{\mathrm{Def. \setminus}}{=} \set{x \mid x \in A \lor x \in \set{y \mid y \in A \land y \notin B}} \\
-    & \overset{\mathrm{Def. \in}}{=} \set{x \mid x \in A \lor (x \in A \land x \notin B)} \\
-    & \overset{\mathrm{Def. Distri.}}{=} \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
-    & \overset{\mathrm{Def. Idem. oder}}{=} \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
-    & \overset{\mathrm{Def. Absorp.}}{=} \set{x \mid x \in A} \\
-    & \overset{\mathrm{Def. \in}}{=} A \\
+    & \customeq{Def. \cup} \set{x \mid x \in A \lor x \in (A \setminus B)} \\
+    & \customeq{Def. \setminus} \set{x \mid x \in A \lor x \in \set{y \mid y \in A \land y \notin B}} \\
+    & \customeq{Def. \in} \set{x \mid x \in A \lor (x \in A \land x \notin B)} \\
+    & \customeq{Def. Distri.} \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
+    & \customeq{Def. Idem. oder} \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
+    & \customeq{Def. Absorp.} \set{x \mid x \in A} \\
+    & \customeq{Def. \in} A \\
 \end{align*}
 
 Somit gilt die Aussage.
@@ -115,10 +117,10 @@ Wir wählen \( A \triangleq \set{1,2}, B \triangleq \set{2,3} \).
 \begin{align*}
     & (B \cup A) \cap B  \\
     &= (\set{2,3} \cup \set{1,2}) \cap \set{2,3}  \\
-    & \overset{\mathrm{Def. \cup}}{=} \set{1,2,3} \cap \set{2,3}  \\
+    & \customeq{Def. \cup} \set{1,2,3} \cap \set{2,3}  \\
     &= \set{2,3} \\
     & \neq \set{2}  \\
-    & \overset{\mathrm{Def. \cap}}{=} \set{1,2} \cap \set{2,3}  \\
+    & \customeq{Def. \cap} \set{1,2} \cap \set{2,3}  \\
     &= A \cap B \\
 \end{align*}
 
