@@ -1,0 +1,86 @@
+\documentclass[10pt,leqno ]{article}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{setspace}
+   
+\DeclarePairedDelimiter\set\{\}
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition} 
+\newtheorem{problem}[theorem]{Aufgabe}
+     
+\newenvironment{solution}[1][L]{\begin{doublespace}\textbf{#1.}\quad }{\ \rule{0.5em}{0.5em}\end{doublespace}}
+    
+\title{Formale Sprachen und Automaten\\ Hausaufgabe 1}
+\author{Marcel Ebert, Pascal Dettmers, Claude (???) \\ TU Berlin}
+
+\begin{document} 
+\maketitle 
+\vskip .25in 
+\thispagestyle{empty}
+
+\begin{problem}
+Mengengrundlagen
+\end{problem}
+
+\begin{solution}[a]
+Gib die mit gelb gekennzeichnete Menge mit nur zwei Mengenoperationen an:
+
+% Falsch wegen mehr als zwei Mengenoperationen (?)
+\[ M = (A \cup C) \setminus (((A \cap B) \setminus C) \setminus ((A \cap C) \setminus B)) \]
+
+\end{solution}
+
+\begin{solution}[b]
+Berechne: \( (( \set{1,3} \times \set{1} )) \cup \set{1, 3, 1 } \setminus \set{(1,3), 1,2} \)
+
+\begin{align*}
+    M &= (( \set{1,3} \times \set{1} )) \cup \set{1, 3, 1 } \setminus \set{(1,3), 1,2} \\
+    & \overset{\mathrm{Def. \times}}{=} (\set{(1,1), (3,1)} \cup \set{1,3,1} \setminus \set{(1,3),1,2}) \\
+    % hier fehlt vielleicht noch die reduktion von {1,3,1} zu  {1,3} (?)
+    & \overset{\mathrm{Def. \cup}}{=} (\set{(1,1),(3,1),1,3} \setminus \set{(1,3),1,2}) \\
+    & \overset{\mathrm{Def. \setminus}}{=} \set{(1,1),(3,1),3}
+\end{align*}
+
+\end{solution}
+
+\begin{solution}[c]
+Berechne: \( ( \set{\emptyset,2} \cup \set{\set{\emptyset}}) \cap \mathcal{P} (\set{ \set{\emptyset}, 2}) \)
+
+\begin{align*}
+    % Das P sieht eigentlich anders aus (?)
+    M &= ( \set{\emptyset,2} \cup \set{\set{\emptyset}}) \cap \mathcal{P} (\set{ \set{\emptyset}, 2}) \\
+    & \overset{\mathrm{Def. \cup}}{=} \set{\emptyset, \set{\emptyset}, 2} \cap \mathcal{P} (\set{ \set{\emptyset}, 2}) \\
+    & \overset{\mathrm{Def. \mathcal{P}}}{=} \set{\emptyset, \set{\emptyset}, 2} \cap \set{\emptyset, \set{\set{\emptyset}}, \set{2}, \set{\set{\emptyset}, 2}} \\
+    & \overset{\mathrm{Def. \cap}}{=} \set{\emptyset}
+\end{align*}
+
+\end{solution}
+
+\begin{problem}
+Mengenbeweise
+\end{problem}
+
+\begin{solution}[a]
+Beweise oder widerlege: Für alle Mengen A und B gilt: \( (A \cap B) \cap A = B \cap A \)
+
+\begin{align*}
+    & (A \cap B) \cap A = B \cap A \\
+    & \overset{\mathrm{Def. \cap}}{=} \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
+    & \overset{\mathrm{Def. Komm.}}{=} \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
+    & \overset{\mathrm{Def. \in}}{=} \set{x \mid (x \in B \land x \in A) \land x \in A} \\
+    & \overset{\mathrm{Def. Assoz}}{=} \set{x \mid x \in B \land (x \in A \land x \in A)} \\
+    & \overset{\mathrm{Def. Idem. und}}{=} \set{x \mid x \in B \land x \in A} \\
+    & \overset{\mathrm{Def. \cap}}{=} B \cap A \\
+\end{align*}
+
+\end{solution}
+
+\end{document}
