@@ -9,7 +9,8 @@
 \usepackage{hyperref}
 \usepackage[margin=1.5in]{geometry}
 \usepackage{setspace}
-   
+\usepackage{stmaryrd}
+
 \DeclarePairedDelimiter\set\{\}
 
 \newcommand\customeq[1]{\overset{\mathrm{#1}}{=}}
@@ -20,7 +21,7 @@
      
 \newenvironment{solution}[1][L]{\begin{doublespace}\textbf{#1.}\quad }{\ \rule{0.5em}{0.5em}\end{doublespace}}
     
-\title{Formale Sprachen und Automaten\\ Hausaufgabe 1}
+\title{Formale Sprachen und Automaten\\ Abgabe 1}
 \author{Marcel Ebert, Pascal Dettmers, Claude (???) \\ TU Berlin}
 
 \begin{document} 
@@ -36,7 +37,7 @@ Mengengrundlagen
 Gib die mit gelb gekennzeichnete Menge mit nur zwei Mengenoperationen an:
 
 % Falsch wegen mehr als zwei Mengenoperationen (?)
-\[ M = (A \cup C) \setminus (((A \cap B) \setminus C) \setminus ((A \cap C) \setminus B)) \]
+\[ M = (A \setminus B) \triangle C \]
 
 \end{solution}
 
@@ -75,13 +76,13 @@ Beweise oder widerlege: Für alle Mengen A und B gilt: \( (A \cap B) \cap A = B 
 
 Wir beweisen die Aussage. Seien A, B beliebige Mengen.
 \begin{align*}
-    & (A \cap B) \cap A = B \cap A \\
-    & \customeq{Def. \cap} \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
-    & \customeq{Def. Komm.} \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
-    & \customeq{Def. \in} \set{x \mid (x \in B \land x \in A) \land x \in A} \\
-    & \customeq{Def. Assoz} \set{x \mid x \in B \land (x \in A \land x \in A)} \\
-    & \customeq{Def. Idem. und} \set{x \mid x \in B \land x \in A} \\
-    & \customeq{Def. \cap} B \cap A \\
+    & & (A \cap B) \cap A = B \cap A \\
+    & \customeq{Def. \cap} & \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
+    & \customeq{Def. Komm.} & \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
+    & \customeq{Def. \in} & \set{x \mid (x \in B \land x \in A) \land x \in A} \\
+    & \customeq{Def. Assoz} & \set{x \mid x \in B \land (x \in A \land x \in A)} \\
+    & \customeq{Def. Idem. und} & \set{x \mid x \in B \land x \in A} \\
+    & \customeq{Def. \cap} & B \cap A \\
 \end{align*}
 
 Somit gilt die Aussage.
@@ -93,14 +94,14 @@ Beweise oder widerlege: Für alle Mengen A und B gilt: \( A \cup (A \setminus B 
 
 Wir beweisen die Aussage. Seien A, B beliebige Mengen.
 \begin{align*}
-    & A \cup (A \setminus B ) = A \\
-    & \customeq{Def. \cup} \set{x \mid x \in A \lor x \in (A \setminus B)} \\
-    & \customeq{Def. \setminus} \set{x \mid x \in A \lor x \in \set{y \mid y \in A \land y \notin B}} \\
-    & \customeq{Def. \in} \set{x \mid x \in A \lor (x \in A \land x \notin B)} \\
-    & \customeq{Def. Distri.} \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
-    & \customeq{Def. Idem. oder} \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
-    & \customeq{Def. Absorp.} \set{x \mid x \in A} \\
-    & \customeq{Def. \in} A \\
+    & & A \cup (A \setminus B ) = A \\
+    & \customeq{Def. \cup} & \set{x \mid x \in A \lor x \in (A \setminus B)} \\
+    & \customeq{Def. \setminus} & \set{x \mid x \in A \lor x \in \set{y \mid y \in A \land y \notin B}} \\
+    & \customeq{Def. \in} & \set{x \mid x \in A \lor (x \in A \land x \notin B)} \\
+    & \customeq{Def. Distri.} & \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
+    & \customeq{Def. Idem. oder} & \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
+    & \customeq{Def. Absorp.} & \set{x \mid x \in A} \\
+    & \customeq{Def. \in} & A \\
 \end{align*}
 
 Somit gilt die Aussage.
@@ -115,17 +116,105 @@ Wir widerlegen die Aussage durch Angabe eines geeigneten Gegenbeispiels.
 Wir wählen \( A \triangleq \set{1,2}, B \triangleq \set{2,3} \).
 
 \begin{align*}
-    & (B \cup A) \cap B  \\
-    &= (\set{2,3} \cup \set{1,2}) \cap \set{2,3}  \\
-    & \customeq{Def. \cup} \set{1,2,3} \cap \set{2,3}  \\
-    &= \set{2,3} \\
-    & \neq \set{2}  \\
-    & \customeq{Def. \cap} \set{1,2} \cap \set{2,3}  \\
-    &= A \cap B \\
+    & & (B \cup A) \cap B  \\
+    &= & (\set{2,3} \cup \set{1,2}) \cap \set{2,3}  \\
+    & \customeq{Def. \cup} & \set{1,2,3} \cap \set{2,3}  \\
+    &= & \set{2,3} \\
+    & \neq & \set{2}  \\
+    & \customeq{Def. \cap} & \set{1,2} \cap \set{2,3}  \\
+    &= & A \cap B \\
 \end{align*}
 
 Somit gilt die Aussage nicht.
 
 \end{solution}
+
+
+\begin{equation*}
+    \begin{aligned}
+    & & (A \cap B) \cap A = B \cap A \\
+    & \customeq{Def. \cap} & \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
+    & \customeq{Def. Komm.} & \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
+    & \customeq{Def. \in} & \set{x \mid (x \in B \land x \in A) \land x \in A} \\
+    & \customeq{Def. Assoz} & \set{x \mid x \in B \land (x \in A \land x \in A)} \\
+    & \customeq{Def. Idem. und} & \set{x \mid x \in B \land x \in A} \\
+    & \customeq{Def. \cap} & B \cap A \\
+    \end{aligned}
+\end{equation*}
+
+\begin{problem}
+    Wahrheitstabellen
+\end{problem}
+
+\begin{solution}[a]
+Beweise oder widerlege nur mit Hilfe einer Wahrheitstabelle oder eines (Gegen-) Beispiels, dass \( \lnot q \land ((r \leftrightarrow (r \rightarrow \bot)) \lor q ) \) kontradiktorisch ist.
+
+\end{solution}
+
+\begin{solution}[b]
+Beweise oder widerlege nur mit Hilfe einer Wahrheitstabelle oder eines (Gegen-) Beispiels, dass \( ((s \land \lnot q) \rightarrow r) \lor r \equiv r \lor (s \rightarrow q) \) kontradiktorisch ist.
+
+\end{solution}
+
+
+\begin{problem}
+    Logische Äquivalenz
+\end{problem}
+
+\begin{solution}[a]
+Gib an: eine Formel, die logisch äquivalent zu \( \bot \) ist und nur  \( \lnot \) und \( \lor \) als Operatoren enthält. 
+
+\( \lnot (q \lor \lnot q) \equiv \bot \)
+    
+\end{solution}
+    
+\begin{solution}[b]
+Beweise nur mit Hilfe von Äquivalenzumformungen, dass \( q \land (r \rightarrow s) \) und \( \lnot(r \lor \lnot q) \lor (s \land q) \) logisch äquivalent sind.    
+
+\begin{equation*}
+    \begin{aligned}
+    & & q \land (r \rightarrow s) \\
+    & \customeq{Def. Impl.} & q \land (\lnot r \lor s)  \\
+    & \customeq{Def. Distr. von \land ueber \lor} & (\lnot r \land q) \lor (s \land q) \\
+    & \customeq{Def. De Morgan II} & \lnot(r \lor \lnot q) \lor (s \land q) \\
+    \end{aligned}
+\end{equation*}
+
+\end{solution}
+
+
+\begin{problem}
+    Variablenbelegungen
+\end{problem}
+
+\begin{solution}[a]
+Beweise ausschließlich mit Hilfe von Argumenten über eine oder mehrere Variablenbelegungen, dass \( q \rightarrow \lnot (r \land s) \equiv \lnot q \lor (r \rightarrow \lnot s) \).
+
+\begin{equation*}
+    \begin{aligned}
+    & & \llbracket q \rightarrow \lnot (r \land s) \rrbracket ^ \beta = W \\
+    & \customeq{Def. Impl.} & \llbracket q \rrbracket ^ \beta = F oder \llbracket \lnot (r \land s) \rrbracket ^ \beta = W  \\
+    & \customeq{Def. De Morgan I} & \llbracket q \rrbracket ^ \beta = F oder \llbracket \lnot r \lor \lnot s \rrbracket ^ \beta = W  \\
+    & \customeq{Def. Impl.} & \llbracket q \rrbracket ^ \beta = F oder \llbracket r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
+    & \customeq{Def. \lnot} & \llbracket \lnot q \rrbracket ^ \beta = W oder \llbracket r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
+    & \customeq{Def. \lor} & \llbracket \lnot q \lor r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
+    \end{aligned}
+\end{equation*}
+
+Damit wird \( q \rightarrow \lnot (r \land s) \) genau dann zu W ausgewertet, wenn \( \lnot q \lor (r \rightarrow \lnot s) \) zu W ausgewertet wird.
+Also sind die beiden Formeln äquivalent.
+
+\end{solution}
+    
+\begin{solution}[b]
+Beweise oder widerlege ausschließlich mit Hilfe von Argumenten über eine oder mehrere Variablenbelegungen, dass \( \lnot (\lnot q \lor (s \land r)) \lor (q \leftrightarrow (s \land r)) \) allgemeingültig ist.
+
+Betrachte die Belegung \( \beta \) mit \( \beta (q) = F \) und \( \beta (r) = \beta (s) = W \). Dann ist
+\[ \llbracket \lnot (\lnot q \lor (s \land r)) \lor (q \leftrightarrow (s \land r)) \rrbracket = F \]
+
+Damit ist die Formel nicht allgemeingültig (da es eine Belegung gibt, unter der die Formel zu F ausgewertet wird).
+
+\end{solution}
+    
 
 \end{document}
