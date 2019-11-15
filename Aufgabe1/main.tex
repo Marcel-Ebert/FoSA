@@ -2,6 +2,7 @@
 
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{array}
 \usepackage{amsmath}
 \usepackage{times}
 \usepackage{mathtools}
@@ -14,6 +15,9 @@
 \DeclarePairedDelimiter\set\{\}
 
 \newcommand\customeq[1]{\overset{\mathrm{#1}}{=}}
+
+\newcolumntype{C}{>$c<$}
+
 
 \newtheorem{theorem}{Theorem}
 \theoremstyle{definition} 
@@ -135,6 +139,20 @@ Somit gilt die Aussage nicht.
 
 \begin{solution}[a]
 Beweise oder widerlege nur mit Hilfe einer Wahrheitstabelle oder eines (Gegen-) Beispiels, dass \( \lnot q \land ((r \leftrightarrow (r \rightarrow \bot)) \lor q ) \) kontradiktorisch ist.
+
+\[
+\begin{array}{C|C||C|C|C|C|C|C|C|C|C|C}
+q & r & $\lnot$ & q & $\overbrace{\land}^{\textbf{\(\downarrow\)}}$ & ((r & $\leftrightarrow$ & (r & $\rightarrow$ & $\bot$)) & $\lor$ & q) \\
+\hline
+F & F & W & F & F & F & F & F & W & F & F & F \\
+F & W & W & F & F & W & F & W & F & F & F & F \\
+W & F & F & W & F & F & F & F & W & F & W & W \\
+W & W & F & W & F & W & F & W & F & F & W & W \\
+\end{array}
+\]
+
+Der Hauptjunktor wird immer zu F ausgewertet. Also ist die Formel kontradiktorisch.
+
 
 \end{solution}
 
