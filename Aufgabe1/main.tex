@@ -129,19 +129,6 @@ Somit gilt die Aussage nicht.
 
 \end{solution}
 
-
-\begin{equation*}
-    \begin{aligned}
-    & & (A \cap B) \cap A = B \cap A \\
-    & \customeq{Def. \cap} & \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
-    & \customeq{Def. Komm.} & \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
-    & \customeq{Def. \in} & \set{x \mid (x \in B \land x \in A) \land x \in A} \\
-    & \customeq{Def. Assoz} & \set{x \mid x \in B \land (x \in A \land x \in A)} \\
-    & \customeq{Def. Idem. und} & \set{x \mid x \in B \land x \in A} \\
-    & \customeq{Def. \cap} & B \cap A \\
-    \end{aligned}
-\end{equation*}
-
 \begin{problem}
     Wahrheitstabellen
 \end{problem}
@@ -216,5 +203,45 @@ Damit ist die Formel nicht allgemeingültig (da es eine Belegung gibt, unter der
 
 \end{solution}
     
+\begin{problem}
+    Prädikatenlogik
+\end{problem}
+
+\begin{solution}
+Beweise: \( ((\exists y . P_1(y) \rightarrow P_2(y)) \land (\forall x . P_1(x))) \rightarrow \exists z . P_2(z) \land P_1(z) \)
+
+Annahme (A1): \( ((\exists y . P_1(y) \rightarrow P_2(y)) \land (\forall x . P_1(x))) \)
+
+Zu Zeigen (Z1): \( \exists z . P_2(z) \land P_1(z) \)
+
+Annahme (A2): \( \exists y . P_1(y) \rightarrow P_2(y) \)
+
+Annahme (A3): \( \forall x . P_1(x) \)
+
+Wähle \(  x \triangleq y \) in A3
+
+Annahme (A4): \( P_1(y) \)
+
+Sei x (beliebig aber fest) in A2
+
+Annahme (A5): \( P_1(y) \rightarrow P_2(y) \)
+
+Aus A4 und A5 folgt A6
+
+Annahme (A6): \( P_2(y) \)
+
+Wähle \( z \triangleq y \) in Z1
+
+Zu Zeigen (Z3): \( P_2(y) \land P_1(y) \)
+
+Teil 1: Zu Zeigen (Z1.1): \( P_2(y) \)
+
+\qquad Aus A6 folgt Z1.1
+
+Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
+
+\qquad Aus A4 folgt Z2.1
+
+\end{solution}
 
 \end{document}
