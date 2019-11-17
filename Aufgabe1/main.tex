@@ -272,9 +272,11 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     \begin{equation*}
         \begin{aligned}
         && \lnot(\lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y))) \\
-        & \customeq{Def. Negation} & \lnot \lnot(\exists x . P_1(x)) \rightarrow \lnot(\forall y . P_2(y) \land P_3(y))) \\
-        & \customeq{Def. doppelte Negation} & (\exists x . P_1(x)) \rightarrow \lnot(\forall y . P_2(y) \land P_3(y))) \\
-        & \customeq{Def. de Morgan 1} & (\exists x . P_1(x)) \rightarrow (\exists y . \lnot P_2(y) \lor \lnot P_3(y))) \\
+        & \customeq{Def. Impl.} & \lnot(\lnot \lnot(\exists x . P_1(x)) \lor (\forall y . P_2(y) \land P_3(y))) \\
+        & \customeq{Def. dopp. Neg.} & \lnot((\exists x . P_1(x)) \lor (\forall y . P_2(y) \land P_3(y))) \\
+        & \customeq{Def.DeMorgan2} & \lnot(\exists x . P_1(x)) \land \lnot (\forall y . P_2(y) \land P_3(y)) \\
+        & \customeq{Def. log.AEquivalenz} & (\forall x . \lnot P_1(x)) \land \lnot (\forall y . P_(y) \land P_3(y)) \\
+        & \customeq{Def. DeMorgan1} & (\forall x . \lnot P_1(x)) \land (\exists y . \lnot P_(y) \lor \lnot P_3(y)) \\
         \end{aligned}
     \end{equation*}
 \end{solution}
