@@ -275,8 +275,9 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
         & \customeq{Def. Impl.} & \lnot(\lnot \lnot(\exists x . P_1(x)) \lor (\forall y . P_2(y) \land P_3(y))) \\
         & \customeq{Def. dopp. Neg.} & \lnot((\exists x . P_1(x)) \lor (\forall y . P_2(y) \land P_3(y))) \\
         & \customeq{Def.DeMorgan2} & \lnot(\exists x . P_1(x)) \land \lnot (\forall y . P_2(y) \land P_3(y)) \\
-        & \customeq{Def. log.\textrm{Äquivalenz}} & (\forall x . \lnot P_1(x)) \land \lnot (\forall y . P_(y) \land P_3(y)) \\
-        & \customeq{Def. DeMorgan1} & (\forall x . \lnot P_1(x)) \land (\exists y . \lnot P_(y) \lor \lnot P_3(y)) \\
+        & \customeq{Def. log.\textrm{Äquivalenz}} & (\forall x . \lnot P_1(x)) \land \lnot (\forall y . P_2(y) \land P_3(y)) \\
+        & \customeq{Def. DeMorgan1} & (\forall x . \lnot P_1(x)) \land (\lnot(\forall y . P_2(y)) \lor \lnot P_3(y)) \\
+        & \customeq{Def. log.\textrm{Äquivalenz}} & (\forall x . \lnot P_1(x)) \land (\exists y . \lnot P_2(y) \lor \lnot P_3(y)) \\
         \end{aligned}
     \end{equation*}
 \end{solution}
@@ -285,7 +286,7 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     Gib an: Den ersten Schritt, d.h. die erste Zeile, eines Beweises per Widerspruch für die
     Aussage \( \lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \)
 
-    Widerspruchs Annahme: \( \lnot(\exists x . P_1(x)) \land \lnot ((\forall y . P_2(y) \land P_3(y))) \)
+    Widerspruchs Annahme: \( p \equiv \lnot(\lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y))) \rightarrow \bot \)
 
 \end{solution}
 
@@ -293,7 +294,7 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     Gib an: Den ersten Schritt, d.h. die erste Zeile, eines Beweises per Kontraposition für die
     Aussage \( \lnot(\exists x . P_1(c)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \)
 
-    Zu Zeigen: \( (\exists y . \lnot P_2(y) \lor \lnot P_3(y)) \rightarrow (\exists x . P_1(x)) \)
+    Zu Zeigen: \( \lnot(\forall y . P_2(y) \land P_3(y)) \rightarrow \lnot \lnot(\exists x . P_1(x))\)
 
 \end{solution}
 
@@ -302,14 +303,14 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \end{problem}
 
 \begin{solution}
-    Beweise per Induktion \( \forall n \in \mathbb N_7 . n \mod 2 = 1\).
+    Beweise per Induktion \( \forall n \in \mathbb N_7 . n \bmod 2 = 1\).
 
-    Hinweis H1: \( (n+m) \mod r = ((n \mod r)(m \mod r)) \mod r \)
+    Hinweis H1: \( (n+m) \bmod r = ((n \bmod r)(m \bmod r)) \bmod r \)
 
     Sei  
     \begin{equation*}
         \begin{aligned}
-        &  P(n) \triangleq (n\mod 2 = 1 ) \\
+        &  P(n) \triangleq (n\bmod 2 = 1 ) \\
         \end{aligned}
     \end{equation*}
 
@@ -323,7 +324,7 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     \textbf{IA (}\(P(7)\)\textbf{)}:
     \begin{equation*}
         \begin{aligned}
-        & 7\mod 2 = 1 \\
+        & 7\bmod 2 = 1 \\
         \end{aligned}
     \end{equation*}
 
@@ -332,18 +333,18 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     \textbf{IV (}\(P(n)\)\textbf{)}:
     \begin{equation*}
         \begin{aligned}
-        &  n \mod 2 = 1 \\
+        &  n \bmod 2 = 1 \\
         \end{aligned}
     \end{equation*}
 
-    \textbf{IS (}\(P(n+10)\)\textbf{)}: Zu Zeigen: \( (n + 10) \mod 2=1 \)
+    \textbf{IS (}\(P(n+10)\)\textbf{)}: Zu Zeigen: \( (n + 10) \bmod 2=1 \)
     \begin{equation*}
         \begin{aligned}
-        & (n + 10) \mod 2 \customeq{H1} ((n \mod 2)+(10 \mod 2)) \mod 2 \\
-        & (n + 10) \mod 2 = ((n \mod 2) + 0) \mod 2 \\
-        & (n + 10) \mod 2 \customeq{IV} (1 + 0) \mod 2 \\
-        & (n + 10) \mod 2 = 1 \mod 2 \\
-        & (n + 10) \mod 2 = 1
+        (n + 10) \bmod 2 \customeq{H1} & ((n \bmod 2)+(10 \bmod 2)) \bmod 2 \\
+        = & ((n \bmod 2) + 0) \bmod 2 \\
+        \customeq{IV} & (1 + 0) \bmod 2 \\
+        = & 1 \bmod 2 \\
+        = & 1
         \end{aligned}
     \end{equation*}
 
