@@ -269,23 +269,21 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \begin{solution}[a]
     Ziehe, durch die schrittweise Anwendung logischer Äquivalenzen, alle Negationen inder folgenden Formel soweit wie möglich nach Innen. Begründe jeden Schritt.
 
-    \(\lnot(\lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y))) \)
-
-    
-    Def: doppelte negation
-    \( (\exists x . P_1(x)) \rightarrow \lnot(\forall y . P_2(y) \land P_3(y))) \)
-
-
-    Def: de Morgen 1 
-    \( (\exists x . P_1(x)) \rightarrow (\exists y . \lnot P_2(y) \lor \lnot P_3(y))) \)
-
+    \begin{equation*}
+        \begin{aligned}
+        && \lnot(\lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y))) \\
+        & \customeq{Def. Negation} & \lnot \lnot(\exists x . P_1(x)) \rightarrow \lnot(\forall y . P_2(y) \land P_3(y))) \\
+        & \customeq{Def. doppelte Negation} & (\exists x . P_1(x)) \rightarrow \lnot(\forall y . P_2(y) \land P_3(y))) \\
+        & \customeq{Def. de Morgan 1} & (\exists x . P_1(x)) \rightarrow (\exists y . \lnot P_2(y) \lor \lnot P_3(y))) \\
+        \end{aligned}
+    \end{equation*}
 \end{solution}
 
 \begin{solution}[b]
     Gib an: Den ersten Schritt, d.h. die erste Zeile, eines Beweises per Widerspruch für die
-    Aussage \( \lnot(\exists x . P_1(c)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \)
+    Aussage \( \lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \)
 
-    Widerspruchs Annahme: \( \lnot(\exists x . P_1(c)) \land \lnot ((\forall y . P_2(y) \land P_3(y))) \)
+    Widerspruchs Annahme: \( \lnot(\exists x . P_1(x)) \land \lnot ((\forall y . P_2(y) \land P_3(y))) \)
 
 \end{solution}
 
@@ -302,6 +300,52 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \end{problem}
 
 \begin{solution}
+    Beweise per Induktion \( \forall n \in \mathbb N_7 . n \mod 2 = 1\).
+
+    Hinweis H1: \( (n+m) \mod r = ((n \mod r)(m \mod r)) \mod r \)
+
+    Sei  
+    \begin{equation*}
+        \begin{aligned}
+        &  P(n) \triangleq (n\mod 2 = 1 ) \\
+        \end{aligned}
+    \end{equation*}
+
+    Wir verwenden das Induktionsschema: 
+    \begin{equation*}
+        \begin{aligned}
+        &  P(7) \land (\forall n \land \mathbb N_7 . P(n) \rightarrow P(n+10)) \rightarrow (\forall x \in \mathbb N_7 . P(x)) \\
+        \end{aligned}
+    \end{equation*}
+
+    \textbf{IA (}\(P(7)\)\textbf{)}:
+    \begin{equation*}
+        \begin{aligned}
+        & 7\mod 2 = 1 \\
+        \end{aligned}
+    \end{equation*}
+
+    Sei \( n \in \mathbb N_7 \).
+
+    \textbf{IV (}\(P(n)\)\textbf{)}:
+    \begin{equation*}
+        \begin{aligned}
+        &  n \mod 2 = 1 \\
+        \end{aligned}
+    \end{equation*}
+
+    \textbf{IS (}\(P(n+10)\)\textbf{)}: Zu Zeigen: \( (n + 10) \mod 2=1 \)
+    \begin{equation*}
+        \begin{aligned}
+        & (n + 10) \mod 2 \customeq{H1} ((n \mod 2)+(10 \mod 2)) \mod 2 \\
+        & (n + 10) \mod 2 = ((n \mod 2) + 0) \mod 2 \\
+        & (n + 10) \mod 2 \customeq{IV} (1 + 0) \mod 2 \\
+        & (n + 10) \mod 2 = 1 \mod 2 \\
+        & (n + 10) \mod 2 = 1
+        \end{aligned}
+    \end{equation*}
+
+    Nach unserem Induktionsschema gilt nun \( \forall x \in \mathbb N_7 . P(x) \) was äquivalent zur ursprünglichen Aussage ist. Damit ist die Aussage bewiesen.
 
 
 \end{solution}
