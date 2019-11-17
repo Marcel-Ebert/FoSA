@@ -15,6 +15,7 @@
 \DeclarePairedDelimiter\set\{\}
 
 \newcommand\customeq[1]{\overset{\mathrm{#1}}{=}}
+\newcommand\customarroweq[1]{\overset{\mathrm{#1}}{\Leftrightarrow}}
 
 \newcolumntype{C}{>$c<$}
 
@@ -82,10 +83,10 @@ Wir beweisen die Aussage. Seien A, B beliebige Mengen.
 \begin{align*}
     & & (A \cap B) \cap A = B \cap A \\
     & \customeq{Def. \cap} & \set{x \mid x \in \set{y \mid y \in A \land y \in B} \land x \in A} \\
-    & \customeq{Def. Komm.} & \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
+    & \customeq{Komm.} & \set{x \mid x \in \set{y \mid y \in B \land y \in A} \land x \in A} \\
     & \customeq{Def. \in} & \set{x \mid (x \in B \land x \in A) \land x \in A} \\
-    & \customeq{Def. Assoz} & \set{x \mid x \in B \land (x \in A \land x \in A)} \\
-    & \customeq{Def. Idem. und} & \set{x \mid x \in B \land x \in A} \\
+    & \customeq{Assoz.} & \set{x \mid x \in B \land (x \in A \land x \in A)} \\
+    & \customeq{Idem.} & \set{x \mid x \in B \land x \in A} \\
     & \customeq{Def. \cap} & B \cap A \\
 \end{align*}
 
@@ -102,9 +103,9 @@ Wir beweisen die Aussage. Seien A, B beliebige Mengen.
     & \customeq{Def. \cup} & \set{x \mid x \in A \lor x \in (A \setminus B)} \\
     & \customeq{Def. \setminus} & \set{x \mid x \in A \lor x \in \set{y \mid y \in A \land y \notin B}} \\
     & \customeq{Def. \in} & \set{x \mid x \in A \lor (x \in A \land x \notin B)} \\
-    & \customeq{Def. Distri.} & \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
-    & \customeq{Def. Idem. oder} & \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
-    & \customeq{Def. Absorp.} & \set{x \mid x \in A} \\
+    & \customeq{Distri.} & \set{x \mid (x \in A \lor x \in B) \land (x \in A \land x \in A)} \\
+    & \customeq{Idem. oder} & \set{x \mid (x \in A \lor x \in B) \land x \in A} \\
+    & \customeq{Absorp.} & \set{x \mid x \in A} \\
     & \customeq{Def. \in} & A \\
 \end{align*}
 
@@ -157,7 +158,26 @@ Der Hauptjunktor wird immer zu F ausgewertet. Also ist die Formel kontradiktoris
 \end{solution}
 
 \begin{solution}[b]
-Beweise oder widerlege nur mit Hilfe einer Wahrheitstabelle oder eines (Gegen-) Beispiels, dass \( ((s \land \lnot q) \rightarrow r) \lor r \equiv r \lor (s \rightarrow q) \) kontradiktorisch ist.
+Beweise oder widerlege nur mit Hilfe einer Wahrheitstabelle oder eines (Gegen-) Beispiels, dass \( ((s \land \lnot q) \rightarrow r) \lor r \equiv r \lor (s \rightarrow q) \).
+
+
+\[
+\begin{array}{C|C|C||C|C|C|C|C|C|C|C||C|C|C|C|C}
+q & r & s & ((s & $\land$ & $\lnot$ & q) & $\rightarrow$ & r) &  $\overbrace{\lor}^{\textbf{\(\downarrow\)}}$ & r & r & $\overbrace{\lor}^{\textbf{\(\downarrow\)}}$ & (s & $\rightarrow$ & q) \\
+\hline
+F & F & F & F & F & W & F & W & F & W & F & F & W & F & W & F \\
+F & F & W & W & W & W & F & F & F & F & F & F & F & W & F & F \\
+F & W & F & F & F & W & F & W & W & W & W & W & W & F & W & F \\
+F & W & W & W & W & W & F & W & W & W & W & W & W & W & F & F \\
+W & F & F & F & F & F & W & W & F & W & F & F & W & F & W & W \\
+W & F & W & W & F & F & W & W & F & W & F & F & W & W & W & W \\
+W & W & F & F & F & F & W & W & W & W & W & W & W & F & W & W \\
+W & W & W & W & F & F & W & W & W & W & W & W & W & W & W & W \\
+\end{array}
+\]
+
+Die beiden Hauptjunktoren werden in jeder Zeile zum selben Wert ausgewertet.
+Also sind die beiden Formeln äquivalent.
 
 \end{solution}
 
@@ -179,9 +199,9 @@ Beweise nur mit Hilfe von Äquivalenzumformungen, dass \( q \land (r \rightarrow
 \begin{equation*}
     \begin{aligned}
     & & q \land (r \rightarrow s) \\
-    & \customeq{Def. Impl.} & q \land (\lnot r \lor s)  \\
-    & \customeq{Def. Distr. von \land ueber \lor} & (\lnot r \land q) \lor (s \land q) \\
-    & \customeq{Def. De Morgan II} & \lnot(r \lor \lnot q) \lor (s \land q) \\
+    & \customeq{Implikation} & q \land (\lnot r \lor s)  \\
+    & \customeq{Distr. von \land \textrm{über} \lor} & (\lnot r \land q) \lor (s \land q) \\
+    & \customeq{De Morgan II} & \lnot(r \lor \lnot q) \lor (s \land q) \\
     \end{aligned}
 \end{equation*}
 
@@ -198,11 +218,11 @@ Beweise ausschließlich mit Hilfe von Argumenten über eine oder mehrere Variabl
 \begin{equation*}
     \begin{aligned}
     & & \llbracket q \rightarrow \lnot (r \land s) \rrbracket ^ \beta = W \\
-    & \customeq{Def. Impl.} & \llbracket q \rrbracket ^ \beta = F oder \llbracket \lnot (r \land s) \rrbracket ^ \beta = W  \\
-    & \customeq{Def. De Morgan I} & \llbracket q \rrbracket ^ \beta = F oder \llbracket \lnot r \lor \lnot s \rrbracket ^ \beta = W  \\
-    & \customeq{Def. Impl.} & \llbracket q \rrbracket ^ \beta = F oder \llbracket r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
-    & \customeq{Def. \lnot} & \llbracket \lnot q \rrbracket ^ \beta = W oder \llbracket r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
-    & \customeq{Def. \lor} & \llbracket \lnot q \lor r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
+    & \customarroweq{Def. \rightarrow} & \llbracket q \rrbracket ^ \beta = F oder \llbracket \lnot (r \land s) \rrbracket ^ \beta = W  \\
+    & \customarroweq{Def. De Morgan I} & \llbracket q \rrbracket ^ \beta = F oder \llbracket \lnot r \lor \lnot s \rrbracket ^ \beta = W  \\
+    & \customarroweq{Def. Impl.} & \llbracket q \rrbracket ^ \beta = F oder \llbracket r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
+    & \customarroweq{Def. \lnot} & \llbracket \lnot q \rrbracket ^ \beta = W oder \llbracket r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
+    & \customarroweq{Def. \lor} & \llbracket \lnot q \lor r \rightarrow \lnot s \rrbracket ^ \beta = W  \\
     \end{aligned}
 \end{equation*}
 
@@ -250,7 +270,7 @@ Annahme (A6): \( P_2(y) \)
 
 Wähle \( z \triangleq y \) in Z1
 
-Zu Zeigen (Z3): \( P_2(y) \land P_1(y) \)
+Zu Zeigen (Z2): \( P_2(y) \land P_1(y) \)
 
 Teil 1: Zu Zeigen (Z1.1): \( P_2(y) \)
 
@@ -284,15 +304,17 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 
 \begin{solution}[b]
     Gib an: Den ersten Schritt, d.h. die erste Zeile, eines Beweises per Widerspruch für die
-    Aussage \( \lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \)
+    Aussage \( \lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \).
 
-    Widerspruchs Annahme: \( p \equiv \lnot(\lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y))) \rightarrow \bot \)
+    Widerspruchs Annahme: 
+    
+    \( \lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \equiv \lnot(\lnot(\exists x . P_1(x)) \rightarrow (\forall y . P_2(y) \land P_3(y))) \rightarrow \bot \)
 
 \end{solution}
 
 \begin{solution}[c]
     Gib an: Den ersten Schritt, d.h. die erste Zeile, eines Beweises per Kontraposition für die
-    Aussage \( \lnot(\exists x . P_1(c)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \)
+    Aussage \( \lnot(\exists x . P_1(c)) \rightarrow (\forall y . P_2(y) \land P_3(y)) \).
 
     Zu Zeigen: \( \lnot(\forall y . P_2(y) \land P_3(y)) \rightarrow \lnot \lnot(\exists x . P_1(x))\)
 
@@ -317,7 +339,7 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     Wir verwenden das Induktionsschema: 
     \begin{equation*}
         \begin{aligned}
-        &  P(7) \land (\forall n \land \mathbb N_7 . P(n) \rightarrow P(n+10)) \rightarrow (\forall x \in \mathbb N_7 . P(x)) \\
+        & (P(7) \land (\forall n \land \mathbb N_7 . P(n) \rightarrow P(n+10)) ) \rightarrow (\forall x \in \mathbb N_7 . P(x)) \\
         \end{aligned}
     \end{equation*}
 
@@ -340,10 +362,10 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
     \textbf{IS (}\(P(n+10)\)\textbf{)}: Zu Zeigen: \( (n + 10) \bmod 2=1 \)
     \begin{equation*}
         \begin{aligned}
-        (n + 10) \bmod 2 \customeq{H1} & ((n \bmod 2)+(10 \bmod 2)) \bmod 2 \\
-        = & ((n \bmod 2) + 0) \bmod 2 \\
-        \customeq{IV} & (1 + 0) \bmod 2 \\
-        = & 1 \bmod 2 \\
+         (n + 10) \mod 2 \customeq{H1} & ((n \mod 2)+(10 \mod 2)) \mod 2 \\
+        = & ((n \mod 2) + 0) \mod 2 \\
+        \customeq{IV} & (1 + 0) \mod 2 \\
+        = & 1 \mod 2 \\
         = & 1
         \end{aligned}
     \end{equation*}
