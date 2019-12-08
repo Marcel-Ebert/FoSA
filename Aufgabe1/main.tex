@@ -369,4 +369,119 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 
 \end{solution}
 
+%%%%%%%%%%%%%%%%%%%%%%%%% HAUSAUFGABE 2 %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+    TODO
+\end{problem}
+
+\begin{problem}
+    TODO
+\end{problem}
+
+%%%%%%%%%%%5
+
+\begin{problem}
+    Abbildungen, Funktionen
+\end{problem}
+\begin{solution}[a]
+
+\textbf{Gib an: Welche der Relationen \(R_1\), \(R_2\), \(R_3\) und \(R_4\) sind (keine) partiellen bzw. totalen Abbildungen?}
+
+Die Relationen \(R_1\) und \(R_2\) sind keine partiellen bzw. totalen Abbildungen. 
+Die Relation \(R_3\) ist eine partielle Abbildung und die Relation \(R_4\) ist eine totale Abbildung.
+
+\textbf{Gib an: Für jede der Relationen, die keine partielle Abbildung ist, ein Gegenbeispiel, dass das begründet.}
+
+Die Relation \(R_1\) ist keine partielle Abbildung, weil die Paare \((d,b)\) und \((d,5)\) in der Relation auftreten.
+Die Relation \(R_2\) ist keine partielle Abbildung, weil die Paare \((5,5)\) und \((5,d)\) in der Relation auftreten.
+\end{solution}
+
+\begin{solution}[b]
+
+\textbf{Gib an: Welche der Eigenschaften injektiv, surjektiv und bijektiv werden durch die Relationen \(R_1\), \(R_2\), \(R_3\) und \(R_4\) (die partielle oder totale Abbildungen sind) erfüllt / nicht erfüllt?}
+
+\(R_3\) ist injektiv, surjektiv und bijektiv.
+
+\(R_4\) ist weder injektiv, surjektiv noch bijektiv. 
+
+\textbf{Gib für jede nichterfüllte Eigenschaft ein Gegenbeispiel oder eine Begründung an.}
+
+Die Abbildung \(R_4\) ist nicht injektiv, weil die Paare \((5,5)\) und \((d,5)\) in der Relation auftreten.
+Die Abbildung \(R_4\) ist nicht surjektiv, weil das Element \(3\) aus dem Zielbereich \(A\) nicht mit einem anderen Element aus dem Argumentbereich \(B\) in Relation steht.
+Die Abbildung \(R_4\) ist nicht bijektiv, weil sie nicht injektiv und nicht surjektiv ist.
+\end{solution}
+
+\begin{solution}[c]
+
+\textbf{Beweise oder widerlege: Für alle Funktionen \(f: B \rightarrow C, g: A \rightarrow B\) mit beliebigen Mengen A, B und C gilt, wenn \(f \circ g\) surjektiv ist, dann ist g surjektiv.}
+
+Wir widerlegen die Aussage durch Angabe eines Gegenbeispiels.
+
+Wir wählen die Mengen A, B und C mit: \(A \triangleq \set{1,2}\), \(B \triangleq \set{3,4}\), \(C \triangleq \set{5}\).
+
+Wähle g: \(A \rightarrow B\) mit \(g \triangleq \set{(1,3)} \triangleq R_1\) und f: \(B \rightarrow C\) mit \(f \triangleq \set{3,5} \triangleq R_2\).
+
+\((f \circ g) \customeq{Def. \circ} \set{(1,5)}\), wobei gilt, dass \(\forall c \in C . \exists a \in A . aR_2c\). Daraus folgt, dass \((f \circ g)\) surjektiv ist.
+
+Für die gewählte Funktion g gilt aber nicht \(\forall b \in B . \exists a \in A . aR_1b\). Daraus folgt, dass g nicht surjektiv ist.
+
+Somit ist die Aussage widerlegt.
+\end{solution}
+
+\begin{problem}
+Kardinalität
+
+Sei \(M \triangleq \set{n \in \mathbb{N} | n \mod 10 = 7}\)
+
+Beweise oder widerlege: \(card(M) = card(\mathbb{N})\)
+\end{problem}
+\begin{solution}
+Wir beweisen die Aussage und geben eine Bijektion f: \(M \rightarrow \mathbb{N}\) an.
+\begin{align*}
+    f: M &\rightarrow \mathbb{N} \\
+    x &\mapsto (x - 7) : 10 \\ 
+\end{align*}
+
+Die Funktion ist für jedes \(x \in M\) eindeutig definiert und bildet ausschließlich auf ganze Zahlen ab.
+
+Wir geben eine weitere Funktion g: \(\mathbb{N} \rightarrow M\) an.
+\begin{align*}
+    f: \mathbb{N} &\rightarrow M \\
+    x &\mapsto 10x + 7 \\ 
+\end{align*}
+
+Zu Zeigen (Z1): Bijektion(f)
+
+Wenn \((f \circ g) = \Delta_\mathbb{N} \) und \((g \circ f) = \Delta_M \), dann ist laut Formelsammlung 2.2.8 f eine Bijektion.
+
+Teil 1: Zu Zeigen (Z1.1): \(\forall x \in \mathbb{N} . (f \circ g)(x) = \Delta_\mathbb{N}(x) \)
+Sei \(x \in \mathbb{N}\) beliebig aber fest.
+\begin{equation*}
+    \begin{aligned}
+    && (f \circ g)(x) \\
+    & \customeq{Def. \circ} & f(g(x)) \\
+    & \customeq{Def. g} & f(10x + 7) \\
+    & \customeq{Def. f} & ((10x + 7) - 7) : 10 \\
+    & = & x \\
+    & \customeq{Def. \Delta} & \Delta_\mathbb{N}(x) \\
+    \end{aligned}
+\end{equation*}
+
+Teil 2: Zu Zeigen (Z2.1):  \(\forall x \in M . (g \circ f)(x) = \Delta_M(x) \)
+Sei \(x \in M\) beliebig aber fest.
+\begin{equation*}
+    \begin{aligned}
+    && (g \circ f)(x) \\
+    & \customeq{Def. \circ} & g(f(x)) \\
+    & \customeq{Def. f} & g((x - 7) : 10) \\
+    & \customeq{Def. g} & 10*((x-7):10) + 7 \\
+    & = & x \\
+    & \customeq{Def. \Delta} & \Delta_M(x) \\
+    \end{aligned}
+\end{equation*}
+
+Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die Aussage.
+\end{solution}
+
 \end{document}
