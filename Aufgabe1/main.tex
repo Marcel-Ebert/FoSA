@@ -370,16 +370,112 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% HAUSAUFGABE 2 %%%%%%%%%%%%%%%%%%%%%%%
-
+%%% FIXME
 \begin{problem}
-    TODO
+    Eigenschaften von Relationen
 \end{problem}
 
-\begin{problem}
-    TODO
-\end{problem}
+\begin{solution}
+   Gib die Relation \(R_4, R_5\) und \(R_6\) jeweils in Megenschreibweise an.
+   
+   R_4 \triangleq \set{(b,2),(b,3),(c,2),(c,3),(c,1)}
+   
+   R_5 \triangleq \set{(1,a),(2,a)}
+   
+   R_6 \triangleq \set{(a,b),(a,c),(c,a),(b,c)}
+   
+   
+\end{solution}
+\begin{solution}
+   Gib die Relation \(R_4, R_5\) und \(R_6\) jeweils graphisch an.
+   
+\end{solution}
+\begin{solution}
+   Gib für jede der Relationen \(R_4\), \(R_5\) und \(R_6\) an, welche der Eigenschaften links-/rechtstotal
+   und links-/rechtseindeutig erfüllt bzw. nicht erfüllt sind
+   
+   \begin{tabular}{|p{1cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+     \hline
 
-%%%%%%%%%%%5
+        & linkstotal & rechtstotal& linkseindeutig& rechtseindeutig\\
+       
+        
+        
+        
+     \hline
+       R_4 & X &  \(\surd \) & X & X \\
+     \hline
+       R_5 & X  & X & X&  \(\surd \) \\
+     \hline
+       R_6 & X &  \(\surd \) & X & X \\
+     \hline
+   \end{tabular}
+   
+\end{solution}
+\begin{solution}  
+Gib zwei Mengen X, Y so an, dass jede rechtstotale, rechtseindeutige Relation R : (X, Y)
+linkseindeutig ist.
+   
+   Wenn 
+   X= \(\set {\emptyset} \)
+   und Y= \(\set {\emptyset}\)
+   ist jede Relation R:(X,Y), die rechtstotal und rechtseindeutig ist, linkseindeutig, da die leere Relation \(\emptyset_{X,Y}\) immer linkseindeutig ist.
+
+   
+\end{solution}
+
+\begin{problem}
+Homogene Relation
+\end{problem}
+\\
+   C\triangleq \set{a,b,c,d}$
+   R_7(C,C) mit$\\
+   R_7= \set{(a,a),(a,c),(c,b),(d,c),(d,d)}\\
+
+\begin{solution}
+Berechne t(\(R_7\)) schrittweise.
+\begin{equation*}
+   \begin{aligned}
+    & R_{7}^1 \customeq{FS 2.1.16} R_{7}\\
+    & R_{7}^2 \customeq{FS 2.1.16} R_{7}R_{7} \customeq{Def. ;} \set{(a,b),(d,b)}\\
+    & R_{7}^3 \customeq{FS 2.1.16} R_{7}R_7^2 \customeq{Def. ;} \emptyset\\
+    & R_{7}^4 \customeq{FS 2.1.16} R_{7}R_7^3 \customeq{Def. ;} R_7^3\\
+    $und damit$ \\
+    & t(R_7) \customeq{Def. t(\cdot)} \bigcup\limits_{n \in N^+} R_7^n = R_7 \cup R_7^2 \cup R_7^3\\
+    & \customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(c,b),(d,b),(d,c),(d,d)}
+   \end{aligned}
+\end{equation*}
+\end{solution}
+\begin{solution}
+   Gib für R_8 \triangleq t(R_7) \cup \Delta_C $an, welche der Ordnungsbegriffe Quasiordnung, partielle
+Ordnung und totale Ordnung erfüllt bzw. nicht erfüllt sind.$ \\
+\Delta_C = \set{(a,a),(b,b),(c,c),(d,d)}\\
+R_8 = \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b),(c,b),(c,c),(d,b),(d,c),(d,d)}\\
+\begin{equation*}
+   \begin{aligned}
+   $refelexiv:$\\ 
+   &\Delta_C \customeq{Def. \Delta} \set{(a,a),(b,b),(c,c),(d,d)} \subseteq{}R_8\\
+   $transistiv:$\\ 
+   & R_8R_8 \customeq{Def. ;} R_8\subseteq R_8\\
+   $antisymetrisch:$\\
+   & R_8^{-1} \cap R_8 \customeq{Def. ^{-1}} \set{(a,a),(b,a),(b,b),(c,a),(b,c),(c,c),(b,d),(c,d),(d,d)} \cap R_8\\
+   &\customeq{Def. \cap} \set{(a,a),(b,b),(c,c),(d,d)} \customeq{Def. \Delta} \Delta_C \subseteq{}R_8\\
+   $linear:$\\
+   &\nabla_{C,C} \setminus \Delta_C\\
+   &\customeq{Def. \Delta} \nabla_{C,C} \setminus \set{(a,a),(b,b),(c,c),(d,d)}\\
+   &\customeq{Def. \nabla} \set{(a,a),(a,b),(a,c),(a,d),(b,a),(b,b),(b,c),(b,d),(c,a),(c,b),(c,c),\\&(c,d),(d,a),(d,b),(d,c),(d,d)} \setminus \set{(a,a),(b,b),(c,c),(d,d)}\\
+   &\customeq{Def. \setminus} \set{(a, b),(a, c),(a, d),(b, a),(b, c),(b, d),(c, a),(c, b),(c, d),(d, a),(d, b),(d, c)}\\
+   &\customeq{Def. \subseteq}\nabla_{C,C} \setminus \Delta_C \subsetneq R_8\\
+   $da (a,d) nicht enthalten in$R_8\\
+
+   \end{aligned}
+\end{equation*}
+
+\(R_8\) ist reflexiv, transitiv, antisymmetrisch und nicht linear, und somit ist R_8 \\$eine quasi Ordnung, eine partielle Ordnung aber keine totale Ordnung$
+\end{solution}
+
+%%% END FIXME
+%%%%%%%%%%%%%%%%%
 
 \begin{problem}
     Abbildungen, Funktionen
