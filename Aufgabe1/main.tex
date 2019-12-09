@@ -373,7 +373,6 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% HAUSAUFGABE 2 %%%%%%%%%%%%%%%%%%%%%%%
-%%% FIXME
 
 \begin{problem}
     Eigenschaften von Relationen
@@ -393,6 +392,10 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \begin{solution}
    Gib die Relation \(R_4, R_5\) und \(R_6\) jeweils graphisch an.
    
+\includegraphics{abb/R4}
+\includegraphics{abb/R5}
+\includegraphics{abb/R6}
+
 \end{solution}
 \begin{solution}
    Gib für jede der Relationen \(R_4\), \(R_5\) und \(R_6\) an, welche der Eigenschaften links-/rechtstotal
@@ -437,7 +440,6 @@ Homogene Relation
 Berechne t(\(R_7\)) schrittweise.
 
 \begin{equation*}
-    
    \begin{aligned}
     & R_\{7\}^1 \customeq\{FS 2.1.16\} R_\{7\}\\
     & R_{7}^2 \customeq{FS 2.1.16} R_{7}R_{7} \customeq{Def. ;} \set{(a,b),(d,b)}\\
@@ -446,14 +448,12 @@ Berechne t(\(R_7\)) schrittweise.
     & t(R_7) \customeq\{Def. t(\cdot)\} \bigcup\limits_\{n \in N^+\} R_7^n = R_7 \cup R_7^2 \cup R_7^3\\
     & \customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(c,b),(d,b),(d,c),(d,d)}
    \end{aligned}
-
 \end{equation*}
 
 \end{solution}
 
 \begin{solution}
-   Gib für $R_8$ \( \triangleq t(R_7) \cup \Delta_C \) an, welche der Ordnungsbegriffe Quasiordnung, partielle
-Ordnung und totale Ordnung erfüllt bzw. nicht erfüllt sind.
+Gib für $R_8$ \( \triangleq t(R_7) \cup \Delta_C \) an, welche der Ordnungsbegriffe Quasiordnung, partielle Ordnung und totale Ordnung erfüllt bzw. nicht erfüllt sind.
 
 \( \Delta_C = \set{(a,a),(b,b),(c,c),(d,d)} \)
 
@@ -461,28 +461,26 @@ $R_8$ = \( \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b)
 
 \begin{equation*}
    \begin{aligned}
-   refelexiv: 
+   reflexiv: 
    &\Delta_C \customeq{Def. \Delta} \set{(a,a),(b,b),(c,c),(d,d)} \subseteq{}R_8\\
-   $transistiv:$\\ 
+   transistiv:\\ 
    & R_8R_8 \customeq{Def. ;} R_8\subseteq R_8\\
-   $antisymetrisch:$\\
+   antisymmetrisch:\\
    & R_8^{-1} \cap R_8 \customeq{Def. ^{-1}} \set{(a,a),(b,a),(b,b),(c,a),(b,c),(c,c),(b,d),(c,d),(d,d)} \cap R_8\\
    &\customeq{Def. \cap} \set{(a,a),(b,b),(c,c),(d,d)} \customeq{Def. \Delta} \Delta_C \subseteq{}R_8\\
-   $linear:$\\
+   linear:\\
    &\nabla_{C,C} \setminus \Delta_C\\
    &\customeq{Def. \Delta} \nabla_{C,C} \setminus \set{(a,a),(b,b),(c,c),(d,d)}\\
    &\customeq{Def. \nabla} \set{(a,a),(a,b),(a,c),(a,d),(b,a),(b,b),(b,c),(b,d),(c,a),(c,b),(c,c),\\&(c,d),(d,a),(d,b),(d,c),(d,d)} \setminus \set{(a,a),(b,b),(c,c),(d,d)}\\
    &\customeq{Def. \setminus} \set{(a, b),(a, c),(a, d),(b, a),(b, c),(b, d),(c, a),(c, b),(c, d),(d, a),(d, b),(d, c)}\\
    &\customeq{Def. \subseteq}\nabla_{C,C} \setminus \Delta_C \subsetneq R_8\\
-   $da (a,d) nicht enthalten in$R_8\\
+   da (a,d) nicht enthalten in R_8 \\
    \end{aligned}
-
 \end{equation*}
 
-\(R_8\) ist reflexiv, transitiv, antisymmetrisch und nicht linear, und somit ist R_8 \\$eine quasi Ordnung, eine partielle Ordnung aber keine totale Ordnung$
+\(R_8\) ist reflexiv, transitiv, antisymmetrisch und nicht linear, und somit ist $R_8$ eine quasi Ordnung, eine partielle Ordnung aber keine totale Ordnung
 \end{solution}
 
-%%% END FIXME
 %%%%%%%%%%%%%%%%%
 
 \begin{problem}
@@ -536,7 +534,7 @@ Somit ist die Aussage widerlegt.
 \begin{problem}
 Kardinalität
 
-Sei \(M \triangleq \set{n \in \mathbb{N} | n \mod 10 = 7}\)
+Sei \(M \triangleq \set{n \in \mathbb{N} | n \bmod 10 = 7}\)
 
 Beweise oder widerlege: \(card(M) = card(\mathbb{N})\)
 \end{problem}
@@ -595,7 +593,7 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
     \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
         semithick]
-    \tikzstyle{every state}=[fill=black,draw=none,text=white]
+    \tikzstyle{every state}=[fill=white,draw=black,text=black]
     
     \node[state] (1)                    {$1$};
     \node[state] (2) [below left of=1]  {$2$};
@@ -604,30 +602,28 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
     \path   (1) edge node {} (2)
                 edge [loop above] node {} (1)
                 edge node {} (5)
-            (2) edge node {} (1)
-                edge node {} (5)
+            (2) edge node {} (5)
                 edge [loop above] node {} (2)
-            (5) edge node {} (2)
-                edge node {} (1)
-                edge [loop above] node {} (5);
+            (5) edge [loop above] node {} (5);
+
+                
     \end{tikzpicture}
     
     \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
         semithick]
-    \tikzstyle{every state}=[fill=black,draw=none,text=white]
+    \tikzstyle{every state}=[fill=white,draw=black,text=black]
     
     \node[state] (3)                    {$3$};
     \node[state] (0) [right of=1]       {$0$};
     
     \path   (3) edge node {} (0)
                 edge [loop above] node {} (3)
-            (0) edge node {} (3)
-                edge [loop above] node {} (0);
+            (0) edge [loop above] node {} (0);
     \end{tikzpicture}
     
     \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
         semithick]
-    \tikzstyle{every state}=[fill=black,draw=none,text=white]
+    \tikzstyle{every state}=[fill=white,draw=black,text=black]
     
     \node[state] (4)                    {$4$};
     
@@ -639,15 +635,13 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 \begin{solution}[b]
 
     A/$R_1$ hat 3 Äquivalenzklassen
-    A/$R_1$ = \{ $[1]_R1$, $[0]_R1$, $[4]_R1$ \}
+    A/$R_1$ = \{ $[1]_{R_1}$, $[0]_{R_1}$, $[4]_{R_1}$ \}
     
-    mit $[1]_R1$ = \{1,2,5\}, $[0]_R1$ = \{3,0\} und $[4]_R1$ = \{4\} 
+    mit $[1]_{R_1}$ = \{1,2,5\}, $[0]_{R_1}$ = \{3,0\} und $[4]_{R_1}$ = \{4\} 
 
 \end{solution}
 
 \begin{solution}[c]
-
-
     Beweise: \( \forall x,y \in X. (x,y)\in R \rightarrow x=y \)
 
     Zu Zeigen (Z0):  \( \forall x,y \in X. (x,y)\in R \rightarrow x=y \)
@@ -660,10 +654,15 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
     Zu Zeigen (Z2): \( x=y \)
     
-    (A0) \(\customarroweq{Def. Symmetrie}\) \( \forall x,y \in X. xRy \land yRx \rightarrow x=y \)
+    Aus der Eigenschaft der Antisymmetrie und (A0) folgt
+
+    (A1) \( \forall x,y \in X. xRy \land yRx \rightarrow x=y \)
+
+    Aus (A0) und (A1) folgt
+
+    (A2) \( x = y \)
 
 \end{solution}
-
 
 
 \begin{problem}
@@ -672,7 +671,7 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
 \begin{solution}[a]
 
-    \(R \triangleq \{ (a,b) | (a-b) \bmod 9 = 2 \} \)
+    \(R \triangleq \{ (a,b) | (a-b) \bmod 9 = 0 \} \)
 
 \end{solution}
 
@@ -706,7 +705,7 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 \end{problem}
 \begin{solution}[a]
     
-\( Ker(f) = \{ (a,c), (c,a), (a,e), (e,a), (c,e), (e,c), (a,a), (b,b), (c,c), (d,d), (e,e) \} \)
+\( Ker(f) = \{ (a,c), (c,a), (a,e), (e,a), (c,e), (e,c), (d,f), (f,d), (a,a), (b,b), (c,c), (d,d), (e,e) \} \)
 
 \end{solution}
 
