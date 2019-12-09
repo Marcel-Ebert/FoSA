@@ -373,6 +373,7 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% HAUSAUFGABE 2 %%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
 
 \begin{problem}
     Eigenschaften von Relationen
@@ -381,11 +382,11 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \begin{solution}
    Gib die Relation \(R_4, R_5\) und \(R_6\) jeweils in Megenschreibweise an.
    
-   $R_4$ \( \triangleq \set \{ (b,2),(b,3),(c,2),(c,3),(c,1) \} \)
+   $R_4$ \( \triangleq \set{ (b,2),(b,3),(c,2),(c,3),(c,1)} \)
    
-   $R_5$ \( \triangleq \set \{ (1,a),(2,a) \} \)
+   $R_5$ \( \triangleq \set{ (1,a),(2,a)} \)
    
-   $R_6$ \( \triangleq \set \{ a,b),(a,c),(c,a),(b,c) \} \)
+   $R_6$ \( \triangleq \set{ (a,b),(a,c),(c,a),(b,c)} \)
    
    
 \end{solution}
@@ -432,20 +433,20 @@ linkseindeutig ist.
 Homogene Relation
 \end{problem}
 
-   \( C \triangleq \set \{ a,b,c,d \} \)
+   \( C \triangleq \set{ a,b,c,d} \)
 
-   $R_7$(C,C) mit $R_7$= \( \set \{ (a,a),(a,c),(c,b),(d,c),(d,d) \} \)
+   $R_7$(C,C) mit $R_7$= \( \set{ (a,a),(a,c),(c,b),(d,c),(d,d)} \)
 
 \begin{solution}
 Berechne t(\(R_7\)) schrittweise.
 
 \begin{equation*}
    \begin{aligned}
-    & R_\{7\}^1 \customeq\{FS 2.1.16\} R_\{7\}\\
+    & R_{7}^1 \customeq{FS 2.1.16} R_7 \\
     & R_{7}^2 \customeq{FS 2.1.16} R_{7}R_{7} \customeq{Def. ;} \set{(a,b),(d,b)}\\
     & R_{7}^3 \customeq{FS 2.1.16} R_{7}R_7^2 \customeq{Def. ;} \emptyset\\
-    & R_{7}^4 \customeq{FS 2.1.16} R_{7}R_7^3 \customeq{Def. ;} R_7^3 und damit\\
-    & t(R_7) \customeq\{Def. t(\cdot)\} \bigcup\limits_\{n \in N^+\} R_7^n = R_7 \cup R_7^2 \cup R_7^3\\
+    & R_{7}^4 \customeq{FS 2.1.16} R_{7}R_7^3 \customeq{Def. ;} R_7^3 \\
+    & t(R_7) \customeq{Def. t(\cdot)} \bigcup\limits_{n \in N^+} R_7^n = R_7 \cup R_7^2 \cup R_7^3\\
     & \customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(c,b),(d,b),(d,c),(d,d)}
    \end{aligned}
 \end{equation*}
@@ -461,9 +462,9 @@ $R_8$ = \( \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b)
 
 \begin{equation*}
    \begin{aligned}
-   reflexiv: 
+   reflexiv: \\
    &\Delta_C \customeq{Def. \Delta} \set{(a,a),(b,b),(c,c),(d,d)} \subseteq{}R_8\\
-   transistiv:\\ 
+   transitiv:\\ 
    & R_8R_8 \customeq{Def. ;} R_8\subseteq R_8\\
    antisymmetrisch:\\
    & R_8^{-1} \cap R_8 \customeq{Def. ^{-1}} \set{(a,a),(b,a),(b,b),(c,a),(b,c),(c,c),(b,d),(c,d),(d,d)} \cap R_8\\
@@ -473,12 +474,11 @@ $R_8$ = \( \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b)
    &\customeq{Def. \Delta} \nabla_{C,C} \setminus \set{(a,a),(b,b),(c,c),(d,d)}\\
    &\customeq{Def. \nabla} \set{(a,a),(a,b),(a,c),(a,d),(b,a),(b,b),(b,c),(b,d),(c,a),(c,b),(c,c),\\&(c,d),(d,a),(d,b),(d,c),(d,d)} \setminus \set{(a,a),(b,b),(c,c),(d,d)}\\
    &\customeq{Def. \setminus} \set{(a, b),(a, c),(a, d),(b, a),(b, c),(b, d),(c, a),(c, b),(c, d),(d, a),(d, b),(d, c)}\\
-   &\customeq{Def. \subseteq}\nabla_{C,C} \setminus \Delta_C \subsetneq R_8\\
-   da (a,d) nicht enthalten in R_8 \\
-   \end{aligned}
+   &\customeq{Def. \subseteq}\nabla_{C,C} \setminus \Delta_C \not \subseteq R_8\\
+    \end{aligned}
 \end{equation*}
 
-\(R_8\) ist reflexiv, transitiv, antisymmetrisch und nicht linear, und somit ist $R_8$ eine quasi Ordnung, eine partielle Ordnung aber keine totale Ordnung
+\(R_8\) ist reflexiv, transitiv, antisymmetrisch und nicht linear, da $(a,d)$ nicht enthalten in $R_8$, und somit ist $R_8$ eine quasi Ordnung, eine partielle Ordnung, aber keine totale Ordnung.
 \end{solution}
 
 %%%%%%%%%%%%%%%%%
@@ -488,12 +488,12 @@ $R_8$ = \( \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b)
 \end{problem}
 \begin{solution}[a]
 
-\textbf{Gib an: Welche der Relationen \(R_1\), \(R_2\), \(R_3\) und \(R_4\) sind (keine) partiellen bzw. totalen Abbildungen?}
+\textit{Gib an: Welche der Relationen \(R_1\), \(R_2\), \(R_3\) und \(R_4\) sind (keine) partiellen bzw. totalen Abbildungen?}
 
 Die Relationen \(R_1\) und \(R_2\) sind keine partiellen bzw. totalen Abbildungen. 
 Die Relation \(R_3\) ist eine partielle Abbildung und die Relation \(R_4\) ist eine totale Abbildung.
 
-\textbf{Gib an: Für jede der Relationen, die keine partielle Abbildung ist, ein Gegenbeispiel, dass das begründet.}
+\textit{Gib an: Für jede der Relationen, die keine partielle Abbildung ist, ein Gegenbeispiel, dass das begründet.}
 
 Die Relation \(R_1\) ist keine partielle Abbildung, weil die Paare \((d,b)\) und \((d,5)\) in der Relation auftreten.
 Die Relation \(R_2\) ist keine partielle Abbildung, weil die Paare \((5,5)\) und \((5,d)\) in der Relation auftreten.
@@ -501,13 +501,13 @@ Die Relation \(R_2\) ist keine partielle Abbildung, weil die Paare \((5,5)\) und
 
 \begin{solution}[b]
 
-\textbf{Gib an: Welche der Eigenschaften injektiv, surjektiv und bijektiv werden durch die Relationen \(R_1\), \(R_2\), \(R_3\) und \(R_4\) (die partielle oder totale Abbildungen sind) erfüllt / nicht erfüllt?}
+\textit{Gib an: Welche der Eigenschaften injektiv, surjektiv und bijektiv werden durch die Relationen \(R_1\), \(R_2\), \(R_3\) und \(R_4\) (die partielle oder totale Abbildungen sind) erfüllt / nicht erfüllt?}
 
 \(R_3\) ist injektiv, surjektiv und bijektiv.
 
 \(R_4\) ist weder injektiv, surjektiv noch bijektiv. 
 
-\textbf{Gib für jede nichterfüllte Eigenschaft ein Gegenbeispiel oder eine Begründung an.}
+\textit{Gib für jede nichterfüllte Eigenschaft ein Gegenbeispiel oder eine Begründung an.}
 
 Die Abbildung \(R_4\) ist nicht injektiv, weil die Paare \((5,5)\) und \((d,5)\) in der Relation auftreten.
 Die Abbildung \(R_4\) ist nicht surjektiv, weil das Element \(3\) aus dem Zielbereich \(A\) nicht mit einem anderen Element aus dem Argumentbereich \(B\) in Relation steht.
@@ -516,7 +516,7 @@ Die Abbildung \(R_4\) ist nicht bijektiv, weil sie nicht injektiv und nicht surj
 
 \begin{solution}[c]
 
-\textbf{Beweise oder widerlege: Für alle Funktionen \(f: B \rightarrow C, g: A \rightarrow B\) mit beliebigen Mengen A, B und C gilt, wenn \(f \circ g\) surjektiv ist, dann ist g surjektiv.}
+\textit{Beweise oder widerlege: Für alle Funktionen \(f: B \rightarrow C, g: A \rightarrow B\) mit beliebigen Mengen A, B und C gilt, wenn \(f \circ g\) surjektiv ist, dann ist g surjektiv.}
 
 Wir widerlegen die Aussage durch Angabe eines Gegenbeispiels.
 
