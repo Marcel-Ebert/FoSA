@@ -11,6 +11,9 @@
 \usepackage[margin=1.5in]{geometry}
 \usepackage{setspace}
 \usepackage{stmaryrd}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
 
 \DeclarePairedDelimiter\set\{\}
 
@@ -371,6 +374,7 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 
 %%%%%%%%%%%%%%%%%%%%%%%%% HAUSAUFGABE 2 %%%%%%%%%%%%%%%%%%%%%%%
 %%% FIXME
+
 \begin{problem}
     Eigenschaften von Relationen
 \end{problem}
@@ -378,11 +382,11 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
 \begin{solution}
    Gib die Relation \(R_4, R_5\) und \(R_6\) jeweils in Megenschreibweise an.
    
-   R_4 \triangleq \set{(b,2),(b,3),(c,2),(c,3),(c,1)}
+   $R_4$ \( \triangleq \set \{ (b,2),(b,3),(c,2),(c,3),(c,1) \} \)
    
-   R_5 \triangleq \set{(1,a),(2,a)}
+   $R_5$ \( \triangleq \set \{ (1,a),(2,a) \} \)
    
-   R_6 \triangleq \set{(a,b),(a,c),(c,a),(b,c)}
+   $R_6$ \( \triangleq \set \{ a,b),(a,c),(c,a),(b,c) \} \)
    
    
 \end{solution}
@@ -397,17 +401,14 @@ Teil 2: Zu Zeigen (Z2.1): \( P_1(y) \)
    \begin{tabular}{|p{1cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
      \hline
 
-        & linkstotal & rechtstotal& linkseindeutig& rechtseindeutig\\
-       
-        
-        
+        & linkstotal & rechtstotal& linkseindeutig& rechtseindeutig\\    
         
      \hline
-       R_4 & X &  \(\surd \) & X & X \\
+       $R_4$  & X &  \(\surd \) & X & X  \\
      \hline
-       R_5 & X  & X & X&  \(\surd \) \\
+       $R_5$ & X  & X & X&  \(\surd \) \\
      \hline
-       R_6 & X &  \(\surd \) & X & X \\
+       $R_6$ & X &  \(\surd \) & X & X \\
      \hline
    \end{tabular}
    
@@ -427,33 +428,40 @@ linkseindeutig ist.
 \begin{problem}
 Homogene Relation
 \end{problem}
-\\
-   C\triangleq \set{a,b,c,d}$
-   R_7(C,C) mit$\\
-   R_7= \set{(a,a),(a,c),(c,b),(d,c),(d,d)}\\
+
+   \( C \triangleq \set \{ a,b,c,d \} \)
+
+   $R_7$(C,C) mit $R_7$= \( \set \{ (a,a),(a,c),(c,b),(d,c),(d,d) \} \)
 
 \begin{solution}
 Berechne t(\(R_7\)) schrittweise.
+
 \begin{equation*}
+    
    \begin{aligned}
-    & R_{7}^1 \customeq{FS 2.1.16} R_{7}\\
+    & R_\{7\}^1 \customeq\{FS 2.1.16\} R_\{7\}\\
     & R_{7}^2 \customeq{FS 2.1.16} R_{7}R_{7} \customeq{Def. ;} \set{(a,b),(d,b)}\\
     & R_{7}^3 \customeq{FS 2.1.16} R_{7}R_7^2 \customeq{Def. ;} \emptyset\\
-    & R_{7}^4 \customeq{FS 2.1.16} R_{7}R_7^3 \customeq{Def. ;} R_7^3\\
-    $und damit$ \\
-    & t(R_7) \customeq{Def. t(\cdot)} \bigcup\limits_{n \in N^+} R_7^n = R_7 \cup R_7^2 \cup R_7^3\\
+    & R_{7}^4 \customeq{FS 2.1.16} R_{7}R_7^3 \customeq{Def. ;} R_7^3 und damit\\
+    & t(R_7) \customeq\{Def. t(\cdot)\} \bigcup\limits_\{n \in N^+\} R_7^n = R_7 \cup R_7^2 \cup R_7^3\\
     & \customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(c,b),(d,b),(d,c),(d,d)}
    \end{aligned}
+
 \end{equation*}
+
 \end{solution}
+
 \begin{solution}
-   Gib für R_8 \triangleq t(R_7) \cup \Delta_C $an, welche der Ordnungsbegriffe Quasiordnung, partielle
-Ordnung und totale Ordnung erfüllt bzw. nicht erfüllt sind.$ \\
-\Delta_C = \set{(a,a),(b,b),(c,c),(d,d)}\\
-R_8 = \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b),(c,b),(c,c),(d,b),(d,c),(d,d)}\\
+   Gib für $R_8$ \( \triangleq t(R_7) \cup \Delta_C \) an, welche der Ordnungsbegriffe Quasiordnung, partielle
+Ordnung und totale Ordnung erfüllt bzw. nicht erfüllt sind.
+
+\( \Delta_C = \set{(a,a),(b,b),(c,c),(d,d)} \)
+
+$R_8$ = \( \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b),(c,b),(c,c),(d,b),(d,c),(d,d)} \)
+
 \begin{equation*}
    \begin{aligned}
-   $refelexiv:$\\ 
+   refelexiv: 
    &\Delta_C \customeq{Def. \Delta} \set{(a,a),(b,b),(c,c),(d,d)} \subseteq{}R_8\\
    $transistiv:$\\ 
    & R_8R_8 \customeq{Def. ;} R_8\subseteq R_8\\
@@ -467,8 +475,8 @@ R_8 = \Delta_C \cup t(R_7)\customeq{Def. \cup} \set{(a,a),(a,b),(a,c),(b,b),(c,b
    &\customeq{Def. \setminus} \set{(a, b),(a, c),(a, d),(b, a),(b, c),(b, d),(c, a),(c, b),(c, d),(d, a),(d, b),(d, c)}\\
    &\customeq{Def. \subseteq}\nabla_{C,C} \setminus \Delta_C \subsetneq R_8\\
    $da (a,d) nicht enthalten in$R_8\\
-
    \end{aligned}
+
 \end{equation*}
 
 \(R_8\) ist reflexiv, transitiv, antisymmetrisch und nicht linear, und somit ist R_8 \\$eine quasi Ordnung, eine partielle Ordnung aber keine totale Ordnung$
@@ -578,6 +586,140 @@ Sei \(x \in M\) beliebig aber fest.
 \end{equation*}
 
 Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die Aussage.
+\end{solution}
+
+\begin{problem}
+    Äquivalenzen
+\end{problem}
+\begin{solution}[a]
+
+    \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+        semithick]
+    \tikzstyle{every state}=[fill=black,draw=none,text=white]
+    
+    \node[state] (1)                    {$1$};
+    \node[state] (2) [below left of=1]  {$2$};
+    \node[state] (5) [below right of=1] {$5$};
+    
+    \path   (1) edge node {} (2)
+                edge [loop above] node {} (1)
+                edge node {} (5)
+            (2) edge node {} (1)
+                edge node {} (5)
+                edge [loop above] node {} (2)
+            (5) edge node {} (2)
+                edge node {} (1)
+                edge [loop above] node {} (5);
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+        semithick]
+    \tikzstyle{every state}=[fill=black,draw=none,text=white]
+    
+    \node[state] (3)                    {$3$};
+    \node[state] (0) [right of=1]       {$0$};
+    
+    \path   (3) edge node {} (0)
+                edge [loop above] node {} (3)
+            (0) edge node {} (3)
+                edge [loop above] node {} (0);
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+        semithick]
+    \tikzstyle{every state}=[fill=black,draw=none,text=white]
+    
+    \node[state] (4)                    {$4$};
+    
+    \path   (4) edge [loop above] node {} (4);
+    \end{tikzpicture}
+
+\end{solution}
+
+\begin{solution}[b]
+
+    A/$R_1$ hat 3 Äquivalenzklassen
+    A/$R_1$ = \{ $[1]_R1$, $[0]_R1$, $[4]_R1$ \}
+    
+    mit $[1]_R1$ = \{1,2,5\}, $[0]_R1$ = \{3,0\} und $[4]_R1$ = \{4\} 
+
+\end{solution}
+
+\begin{solution}[c]
+
+
+    Beweise: \( \forall x,y \in X. (x,y)\in R \rightarrow x=y \)
+
+    Zu Zeigen (Z0):  \( \forall x,y \in X. (x,y)\in R \rightarrow x=y \)
+
+    Sei x,y beliebig in X
+
+    Zu Zeigen (Z1): \( (x,y) \in R \rightarrow x=y \)
+
+    Annahme (A0) : \( (x,y) \in R \)
+
+    Zu Zeigen (Z2): \( x=y \)
+    
+    (A0) \(\customarroweq{Def. Symmetrie}\) \( \forall x,y \in X. xRy \land yRx \rightarrow x=y \)
+
+\end{solution}
+
+
+
+\begin{problem}
+    Repräsentantensysteme
+\end{problem}
+
+\begin{solution}[a]
+
+    \(R \triangleq \{ (a,b) | (a-b) \bmod 9 = 2 \} \)
+
+\end{solution}
+
+\begin{solution}[b]
+    
+    A/$R$ hat 3 Äquivalenzklassen
+    A/$R$ = \{ $[2]_R$, $[5]_R$, $[8]_R$ \} mit 
+
+    $[2]_R$ = \{ \( n \in \mathbb{N} | n \bmod 9 = 2 \) \}
+
+    $[5]_R$ = \{ \( n \in \mathbb{N} | n \bmod 9 = 5 \) \}
+
+    $[8]_R$ = \{ \( n \in \mathbb{N} | n \bmod 9 = 8 \) \}
+
+\end{solution}
+
+\begin{solution}[c] 
+
+    \( P \triangleq \{ 2,5,8 \} \)
+    
+\end{solution}
+
+\begin{solution}[d]
+
+    \( f: \{ a,b,c \} \rightarrow P \) mit \(f \triangleq \{ (a,2), (b,5), (c,8) \}\)
+    
+\end{solution}
+
+\begin{problem}
+    Kern einer Abbildung
+\end{problem}
+\begin{solution}[a]
+    
+\( Ker(f) = \{ (a,c), (c,a), (a,e), (e,a), (c,e), (e,c), (a,a), (b,b), (c,c), (d,d), (e,e) \} \)
+
+\end{solution}
+
+\begin{solution}[b]
+
+    \( f:D \rightarrow \mathbb{N} \) mit \( ((n \bmod 3) + 1) * 4 + 1 \)
+
+\end{solution}
+
+\begin{solution}[c]
+
+    Antwort: \( card(X) > card(Y) \)
+    
 \end{solution}
 
 \end{document}
