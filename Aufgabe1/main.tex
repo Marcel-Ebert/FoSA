@@ -853,4 +853,72 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
     
 \end{solution}
 
+\begin{problem}
+    Reguläre Sprachen / Pumping Lemma
+\end{problem}
+
+\begin{problem}
+    DFA
+\end{problem}
+
+\begin{solution}[a]
+
+    \( (q_1,bb) \vdash (q_2,b) \vdash (q_3,\lambda) \text{ da $q_3$ $\notin \{ q_2 \}$, ist bb $\notin L(M_3)$  } \) 
+
+    \( (q_1,ccbc) \vdash (q_0,cbc) \vdash (q_1,bc) \vdash (q_2,c) \vdash (q_2,\lambda) \text{ da $q_2$ $\in \{ q_2 \}$, ist ccbc $\in L(M_3)$  } \)
+    
+\end{solution}
+
+\begin{solution}[b]
+    
+    \( (q_0,abc) \vdash (q_1,bc) \vdash (q_1,c) \vdash (q_2,\lambda) \text{ da $q_2$ $\in \{ q_0,q_2 \}$, ist abc $\in L(M_4)$} \)
+
+    \( (q_0,cbc) \vdash (q_2,bc) \vdash (q_2,c) \vdash (q_1,\lambda) \text{ da $q_1$ $\notin \{ q_0,q_2 \}$, ist cbc $\notin L(M_4)$ }\)
+    
+\end{solution}
+
+\begin{solution}[c]
+
+    \( L(M_3) = \{ w \in c^{n}bc^{m} | n,m \in \mathbb{N} \text{ und } |w| > 0 \} \)
+    
+\end{solution}
+
+\begin{solution}[d]
+
+    \( L(M_4) = \{ x^{p}ab^{n}c^{m}b^{o} | m,n,o \in \mathbb{N} \text{ und } m \mod 2 = 1 \land p = \{0,1\}  \text{ mit } x = cb^{q} | q \in \mathbb{N} \}\)
+    
+\end{solution}
+
+\begin{problem}
+    Automat zu einer Sprache
+\end{problem}
+
+\begin{solution}[a]
+
+    $\delta_{5}$:
+
+
+        \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+            semithick]
+        \tikzstyle{every state}=[fill=white,draw=black,text=black]
+        
+        \node[initial,state] (0) {$q_0$};
+        \node[state] (1) [right of=0] {$q_1$};
+        \node[state, accepting] (2) [right of=1] {$q_2$};
+        \node[state] (3) [below of=1] {$q_3$};
+        \node[state] (4) [below of=3] {$q_4$};
+        
+        \path
+            (0) edge node {b} (1)
+            (1) edge node {b} (2)
+                edge node {b} (3)
+            (2) edge [loop above] node {c} (2)
+            (3) edge node {b} (4)
+            (4) edge [right , bend right =20] node {b} (1);
+
+        \end{tikzpicture}
+    
+\end{solution}
+
+
 \end{document}
