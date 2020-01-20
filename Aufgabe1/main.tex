@@ -751,7 +751,7 @@ Gegeben sei das Alphabet \(\lambda = \set{ a, b, c }\).\\
 \end{solution}
 \begin{solution}[b]Gib eine Menge von maximal 5 Wörtern über dem Alphabet\(\sum\) so an, dass die Suffixe
 dieser Wörter genau aus den Wörtern\(\lambda\), a, b, c, ac, bb, cb, ccb bestehen\\
-M =\set{a, bb , ac, ccb}\\
+\(M =\set{a, bb , ac, ccb}\)\\
 
 \end{solution}
 \begin{solution}[c]Gib ein Wort über dem Alphabet \(\lambda\) so an, dass die Anzahl der Teilwörter und die Summe
@@ -766,7 +766,7 @@ Reguläre Ausdrücke
 Gegeben sei das Alphabet \(\lambda = \set{ a, b, c }\).\\
 \\
 \begin{solution}[a]Gib die Sprache L(\(e_1\)) für den regulären Ausdruck \(e1 , a0a + ac (b + e)^* + d + cc^*\) an,ohne auf reguläre Ausdrücke zu verweisen. \\
-L(e_1)   \triangleq (w \in \sum^* \mid w \in {ac(b)^*,d,cc^*})
+\(L(e_1)   \triangleq (w \in \sum^* \mid w \in {ac(b)^*,d,cc^*})\)
 
 
 \end{solution}
@@ -774,7 +774,7 @@ L(e_1)   \triangleq (w \in \sum^* \mid w \in {ac(b)^*,d,cc^*})
 
 
 \begin{solution}[b]
-e_2 \triangleq ((b)^*a(b)^*a(b)^*a(b)^*)^+ + d + c^* + (c)^*d(c)^* + ((c)^*(d)^+(c)^*(d)^+(c)^*(d)^+(c)^*)^*
+\(e_2 \triangleq ((b)^*a(b)^*a(b)^*a(b)^*)^+ + d + c^* + (c)^*d(c)^* + ((c)^*(d)^+(c)^*(d)^+(c)^*(d)^+(c)^*)^*\)
 
 
 \end{solution}
@@ -784,20 +784,20 @@ Ordnen von Wörtern
 \end{problem}
 \begin{solution}[a]
 
-\lambda \ll_{R1} 312 \ll_{R1} 32 \ll_{R1} 120 \ll_{R1} 032 \ll_{R1} 0 \ll_{R1} 02 
+\(\lambda \ll_{R1} 312 \ll_{R1} 32 \ll_{R1} 120 \ll_{R1} 032 \ll_{R1} 0 \ll_{R1} 02 \)
 
 
 \end{solution}
 \begin{solution}[b]
 
-\lambda \ll_{R2}^S 23 \ll_{R2}^S 30 \ll_{R2}^S 231 \ll_{R2}^S 230 \ll_{R2}^S 000
+\( \lambda \ll_{R2}^S 23 \ll_{R2}^S 30 \ll_{R2}^S 231 \ll_{R2}^S 230 \ll_{R2}^S 000 \)
 
 
 
 \end{solution}
 \begin{solution}[c]
 
-R_3 = t(r(\set{(2,0),(0,3),(3,1)}))
+\( R_3 = t(r(\set{(2,0),(0,3),(3,1)})) \)
 
 
 \end{solution}
@@ -807,7 +807,7 @@ R_3 = t(r(\set{(2,0),(0,3),(3,1)}))
 \end{problem}
 
 \begin{solution}
-Beweise per (Wort)Induktion das \forall w \in \sum^* . bin(w) \geq \vert w \vert_1 \\
+Beweise per (Wort)Induktion das \( \forall w \in \sum^* . bin(w) \geq \vert w \vert_1 \) \\
 
 bin(w) kann nicht kleiner sein als \(\vert w \vert_1 \)da für jede 1 die in w enthalten ist mindestens 1 zum Wert von bin(w) hinzugefügt wird. die Funktion w ändert von der letzten Stelle nach vorne und verdoppelt bei jedem Schritt den Multiplikator von der Binärstelle und startet bei 1. Dadurch kann muss jede 1 in w mindestens 1 zur Entzahl hinzuaddieren.\\
 Bsp. w=10110 
@@ -819,7 +819,7 @@ Bin(101)=Bin(10)+4*1+2*1+1*0\\
 Bin(10)=Bin(1)+8*0+4*1+2*1+1*0\\
 Bin(1)=Bin(\(\lambda\))+16*1+8*0+4*1+2*1+1*0\\
 Bin(\(\lambda\))=0+16*1+8*0+4*1+2*1+1*0=22\\
-22\geq 3
+$22\geq 3$
 
 
 \end{solution}
@@ -944,6 +944,31 @@ Bin(\(\lambda\))=0+16*1+8*0+4*1+2*1+1*0=22\\
     Reguläre Sprachen / Pumping Lemma
 \end{problem}
 
+\begin{solution}[a]
+
+    Seien $m \in \mathbb{N}$ beliebig und fest. Wir wählen das Wort $w = a^{m}c^{m}b^{m+7}$ mit $w 
+    \in A_1$ und $|w| \geq m$. Sei $w=xyz$ eine beliebige Zerlegung mit $y \neq \lambda$ und $|xy| \leq m $. Dann ist $x=a^{i}$, $y=a^{j}$, $z=a^{m-i-j}c^{m}b^{m+7}$ für $j \neq 0$ und $i+j \leq m$. Wir wählen $k=0$. Dann ist $xy^{0}z=a^{m-j}c^{m}b^{m+7}$, somit ist $xy^{0}z \notin A_1 $, denn der Abstand von $m-j$ zu $m+7$ kann nicht mehr 7 betragen, da $j \neq 0$ ist.
+    
+\end{solution}
+
+\begin{solution}[b]
+
+    Sei $m \in \mathbb{N} w = cb^{m-3}ca^{m}$ mit $w \in A_2$, denn $cb^{m-3}ca^{m} = cxca^{m}$ für $x \in {c,b}^{*}$ und $ |cb^{m-3}c < m$ und $|w| \geq m$
+
+    Sei $w=xyz$ eine beliebige Zerlegung mit $y \neq \lambda$ und $|xy| \leq m $
+
+    1.Fall: $x=cb^{i}$, $y=b^{j}c$, $z=a^{m}$ für $i+j = m-3$. Wir wählen $k=0$. Dann ist $xy^{0}z = cb^{i}a^{m}$. $cb^{i}a^{m}\notin A_2$ 
+
+    2.Fall: $x=cb^{m-3}$, $y=c$, $z=a^{m}$. Wir wählen $k=0$. Dann ist $xy^{0}z = cb^{m-3}a^{m}$. $cb^{m-3}a^{m} \notin A_2$ 
+
+    3.Fall: $x=c$, $y=b^{m=3}c$, $z=a^{m}$. Wir wählen $k=0$. Dann ist $xy^{0}z = ca^{m}$. $ca^{m} \notin A_2$ 
+
+    4.Fall: $x=\lambda$, $y=cb^{m-3}c$, $z=a^{m}$. Wir wählen $k=0$. Dann ist $xy^{0}z = a^{m}$. $a^{m} \notin A_2$ 
+    
+\end{solution}
+
+
+
 \begin{problem}
     DFA
 \end{problem}
@@ -972,7 +997,7 @@ Bin(\(\lambda\))=0+16*1+8*0+4*1+2*1+1*0=22\\
 
 \begin{solution}[d]
 
-    \( L(M_4) = \{ x^{p}ab^{n}c^{m}b^{o} \mid m,n,o \in \mathbb{N} \text{ und } m \mod 2 = 1 \land p = \{0,1\}  \text{ mit } x = cb^{q} \mid q \in \mathbb{N} \}\)
+    \( L(M_4) = \{ (w \in \{ a,b,c \}^{*} \mid \exists x \in \{ b,c \}. \exists n \in \{ 0,1 \}, m \in \mathbb{N}. w = a^{n}x^{m} \land |w|_C \mod 2 = 1) \lor |w|=0 \} \)
     
 \end{solution}
 
@@ -991,17 +1016,23 @@ Bin(\(\lambda\))=0+16*1+8*0+4*1+2*1+1*0=22\\
         
         \node[initial,state] (0) {$q_0$};
         \node[state] (1) [right of=0] {$q_1$};
-        \node[state, accepting] (2) [right of=1] {$q_2$};
+        \node[state, accepting] (2) [above of=0] {$q_2$};
         \node[state] (3) [below of=1] {$q_3$};
         \node[state] (4) [below of=3] {$q_4$};
+        \node[state] (5) [below of=0] {$q_5$};
         
         \path
             (0) edge node {b} (1)
+                edge node {c} (5)
             (1) edge node {b} (2)
                 edge node {b} (3)
+                edge node {c} (5)
             (2) edge [loop above] node {c} (2)
+                edge [right , bend right =100] node {b} (5)
             (3) edge node {b} (4)
-            (4) edge [right , bend right =20] node {b} (1);
+                edge node {c} (5)
+            (4) edge [right , bend right =20] node {b} (1)
+                edge [right , bend right =20] node {c} (5);
 
         \end{tikzpicture}
     
