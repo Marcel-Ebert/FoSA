@@ -756,13 +756,13 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
 \begin{solution}[a]
 
-    \(S \Rightarrow_{G_1} bV \Rightarrow_{G_1} bvbS \Rightarrow_{G_1} bcbaaU \Rightarrow_{G_1} bcbaacU \Rightarrow_{G_1} bcbaacc \)
+    \(S \Rightarrow_{G_1} bV \Rightarrow_{G_1} bcbS \Rightarrow_{G_1} bcbaaU \Rightarrow_{G_1} bcbaacU \Rightarrow_{G_1} bcbaacc \)
 
 \end{solution}
 
 \begin{solution}[b]
 
-    \( L(G_1) = \{ x^{n}y | n \in \mathbb{N} \text{ mit } x = \{bca^{m}b | m \in \{0,1\}\} \text{ und } y = \{aavc | v \in \{b,c\}^{*}\} \} \)
+    \( L(G_1) = \{ x^{n}y \mid n \in \mathbb{N} \text{ mit } x = \{bca^{m}b \mid m \in \{0,1\}\} \text{ und } y = \{aavc \mid v \in \{b,c\}^{*}\} \} \)
 
 \end{solution}
 
@@ -774,16 +774,16 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
 \begin{solution}[d]
 
-    \( L(G_2) = \{ cb^{2n}(ab)^{m}b^{2o}c(aa)^{n+o}a^{m} | n,m,o \in \mathbb{N} \} \)
+    \( L(G_2) = \{ cb^{2n}(ab)^{m}b^{2o}c(aa)^{n+o}a^{m} \mid n,m,o \in \mathbb{N} \} \)
 
-    oder
+    % oder
 
-    \( L(G_2) = \{ c(bb)^{n}(ab)^{m}(bb)^{o}ca^{2+(n+o)+m} | n,m,o \in \mathbb{N} \} \)
+    % \( L(G_2) = \{ c(bb)^{n}(ab)^{m}(bb)^{o}ca^{2+(n+o)+m} \mid n,m,o \in \mathbb{N} \} \)
     
 \end{solution}
 
 \begin{problem}
-    Grammatiken und Sprachen
+    Sprachen und Grammatiken
 \end{problem}
 
 \begin{solution}[a]
@@ -794,13 +794,13 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
     \( S \to cT \)
 
-    \( T \to aU | bU | a | b \)
+    \( T \to aU \mid bU \mid a \mid b \)
 
-    \( U \to aaU | bbU | abU | baU \)
+    \( U \to aaU \mid bbU \mid abU \mid baU \)
 
 \end{solution}
 
-\begin{solution}[a]
+\begin{solution}[b]
 
     \( G_4 = ( \{ S,T,U \}, \sum, P_4, S ) \) mit 
 
@@ -808,9 +808,9 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
     \( S \to bbT \) 
 
-    \( T \to bTc | bTac | aU \) 
+    \( T \to bTc \mid bTac \mid aU \) 
 
-    \( U \to aU | cc \) 
+    \( U \to aU \mid cc \) 
     
 \end{solution}
 
@@ -840,15 +840,15 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
     $P_5:$ 
 
-    \( S \to aT | cU \) 
+    \( S \to aT \mid cU \) 
 
-    \( T \to aT | cW | c \) 
+    \( T \to aT \mid cW \mid c \) 
 
-    \( U \to bV | b \)
+    \( U \to bV \mid b \)
 
     \( V \to bU \)
 
-    \( W \to bW | b \)
+    \( W \to bW \mid b \)
 
     
 \end{solution}
@@ -879,13 +879,13 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
 \begin{solution}[c]
 
-    \( L(M_3) = \{ w \in c^{n}bc^{m} | n,m \in \mathbb{N} \text{ und } |w| > 0 \} \)
+    \( L(M_3) = \{ w \in c^{n}bc^{m} \mid n,m \in \mathbb{N} \text{ und } |w| > 0 \} \)
     
 \end{solution}
 
 \begin{solution}[d]
 
-    \( L(M_4) = \{ x^{p}ab^{n}c^{m}b^{o} | m,n,o \in \mathbb{N} \text{ und } m \mod 2 = 1 \land p = \{0,1\}  \text{ mit } x = cb^{q} | q \in \mathbb{N} \}\)
+    \( L(M_4) = \{ x^{p}ab^{n}c^{m}b^{o} \mid m,n,o \in \mathbb{N} \text{ und } m \mod 2 = 1 \land p = \{0,1\}  \text{ mit } x = cb^{q} \mid q \in \mathbb{N} \}\)
     
 \end{solution}
 
