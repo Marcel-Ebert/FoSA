@@ -750,4 +750,107 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
     
 \end{solution}
 
+\begin{problem}
+    Grammatiken und Sprachen
+\end{problem}
+
+\begin{solution}[a]
+
+    \(S \Rightarrow_{G_1} bV \Rightarrow_{G_1} bvbS \Rightarrow_{G_1} bcbaaU \Rightarrow_{G_1} bcbaacU \Rightarrow_{G_1} bcbaacc \)
+
+\end{solution}
+
+\begin{solution}[b]
+
+    \( L(G_1) = \{ x^{n}y | n \in \mathbb{N} \text{ mit } x = \{bca^{m}b | m \in \{0,1\}\} \text{ und } y = \{aavc | v \in \{b,c\}^{*}\} \} \)
+
+\end{solution}
+
+\begin{solution}[c]
+
+    \(S \Rightarrow_{G_2} cT \Rightarrow_{G_2} cbbTaa \Rightarrow_{G_2} cbbabTaaa \Rightarrow_{G_2} cbbabcaaa \)
+    
+\end{solution}
+
+\begin{solution}[d]
+
+    \( L(G_2) = \{ cb^{2n}(ab)^{m}b^{2o}c(aa)^{n+o}a^{m} | n,m,o \in \mathbb{N} \} \)
+
+    oder
+
+    \( L(G_2) = \{ c(bb)^{n}(ab)^{m}(bb)^{o}ca^{2+(n+o)+m} | n,m,o \in \mathbb{N} \} \)
+    
+\end{solution}
+
+\begin{problem}
+    Grammatiken und Sprachen
+\end{problem}
+
+\begin{solution}[a]
+
+    \( G_3 = ( \{ S,T,U \}, \sum, P_3, S ) \) mit 
+
+    $P_3:$ 
+
+    \( S \to cT \)
+
+    \( T \to aU | bU | a | b \)
+
+    \( U \to aaU | bbU | abU | baU \)
+
+\end{solution}
+
+\begin{solution}[a]
+
+    \( G_4 = ( \{ S,T,U \}, \sum, P_4, S ) \) mit 
+
+    $P_4:$ 
+
+    \( S \to bbT \) 
+
+    \( T \to bTc | bTac | aU \) 
+
+    \( U \to aU | cc \) 
+    
+\end{solution}
+
+\begin{problem}
+    Chomsky Hierarchie
+\end{problem}
+
+\begin{solution}[a]
+    
+    \( G_1 \to \text{ Typ 2 Grammatik}\)
+
+    \( G_2 \to \text{ Typ 1 Grammatik}\)
+
+\end{solution}
+
+\begin{solution}[b]
+
+    \( A_3 \to \text{ ist regulär (Typ 3)} \)
+
+    \( A_4 \to \text{ ist kontextfrei (Typ 2)} \)
+    
+\end{solution}
+
+\begin{solution}[c]
+
+    \( G_5 = ( \{ S,T,U,V,W \}, \{ a,b \}, P_5, S ) \) mit 
+
+    $P_5:$ 
+
+    \( S \to aT | cU \) 
+
+    \( T \to aT | cW | c \) 
+
+    \( U \to bV | b \)
+
+    \( V \to bU \)
+
+    \( W \to bW | b \)
+
+    
+\end{solution}
+
 \end{document}
