@@ -738,6 +738,93 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
 \end{solution}
 
+
+\begin{problem}
+    Wörter und Sprachen
+\end{problem}
+Gegeben sei das Alphabet \(\lambda = \set{ a, b, c }\).\\
+\\
+\begin{solution}[a]Gib alle Präfixe der Wörter ac und bca an.
+
+ \(\set{\lambda ,a ,c ,b ,bc ,bca}  \)\\
+
+\end{solution}
+\begin{solution}[b]Gib eine Menge von maximal 5 Wörtern über dem Alphabet\(\sum\) so an, dass die Suffixe
+dieser Wörter genau aus den Wörtern\(\lambda\), a, b, c, ac, bb, cb, ccb bestehen\\
+M =\set{a, bb , ac, ccb}\\
+
+\end{solution}
+\begin{solution}[c]Gib ein Wort über dem Alphabet \(\lambda\) so an, dass die Anzahl der Teilwörter und die Summe
+der Anzahl der Präfixe und Suffixe gleich 10 ist\\
+
+w=abca \( \in \lambda^* \)\\
+\end{solution}
+\pagebreak
+\begin{problem}
+Reguläre Ausdrücke
+\end{problem}
+Gegeben sei das Alphabet \(\lambda = \set{ a, b, c }\).\\
+\\
+\begin{solution}[a]Gib die Sprache L(\(e_1\)) für den regulären Ausdruck \(e1 , a0a + ac (b + e)^* + d + cc^*\) an,ohne auf reguläre Ausdrücke zu verweisen. \\
+L(e_1)   \triangleq (w \in \sum^* \mid w \in {ac(b)^*,d,cc^*})
+
+
+\end{solution}
+
+
+
+\begin{solution}[b]
+e_2 \triangleq ((b)^*a(b)^*a(b)^*a(b)^*)^+ + d + c^* + (c)^*d(c)^* + ((c)^*(d)^+(c)^*(d)^+(c)^*(d)^+(c)^*)^*
+
+
+\end{solution}
+
+\begin{problem}
+Ordnen von Wörtern
+\end{problem}
+\begin{solution}[a]
+
+\lambda \ll_{R1} 312 \ll_{R1} 32 \ll_{R1} 120 \ll_{R1} 032 \ll_{R1} 0 \ll_{R1} 02 
+
+
+\end{solution}
+\begin{solution}[b]
+
+\lambda \ll_{R2}^S 23 \ll_{R2}^S 30 \ll_{R2}^S 231 \ll_{R2}^S 230 \ll_{R2}^S 000
+
+
+
+\end{solution}
+\begin{solution}[c]
+
+R_3 = t(r(\set{(2,0),(0,3),(3,1)}))
+
+
+\end{solution}
+\pagebreak
+\begin{problem}
+    Induktion über Wörter
+\end{problem}
+
+\begin{solution}
+Beweise per (Wort)Induktion das \forall w \in \sum^* . bin(w) \geq \vert w \vert_1 \\
+
+bin(w) kann nicht kleiner sein als \(\vert w \vert_1 \)da für jede 1 die in w enthalten ist mindestens 1 zum Wert von bin(w) hinzugefügt wird. die Funktion w ändert von der letzten Stelle nach vorne und verdoppelt bei jedem Schritt den Multiplikator von der Binärstelle und startet bei 1. Dadurch kann muss jede 1 in w mindestens 1 zur Entzahl hinzuaddieren.\\
+Bsp. w=10110 
+
+\(\vert 10110 \vert_1 \) = 3\\
+Bin(10110)= Bin(1011)+1*0\\
+Bin(1011)=Bin(101)+2*1+1*0\\
+Bin(101)=Bin(10)+4*1+2*1+1*0\\
+Bin(10)=Bin(1)+8*0+4*1+2*1+1*0\\
+Bin(1)=Bin(\(\lambda\))+16*1+8*0+4*1+2*1+1*0\\
+Bin(\(\lambda\))=0+16*1+8*0+4*1+2*1+1*0=22\\
+22\geq 3
+
+
+\end{solution}
+
+
 \begin{solution}[b]
 
     \( f:D \rightarrow \mathbb{N} \) mit \( ((n \bmod 3) + 1) * 4 + 1 \)
