@@ -738,6 +738,19 @@ Da wir Z1.1 und Z2.1 gezeigt haben, gilt: f ist eine Bijektion. Somit gilt die A
 
 \end{solution}
 
+\begin{solution}[b]
+
+    \( f:D \rightarrow \mathbb{N} \) mit \( ((n \bmod 3) + 1) * 4 + 1 \)
+
+\end{solution}
+
+\begin{solution}[c]
+
+    Antwort: \( card(X) > card(Y) \)
+    
+\end{solution}
+
+\pagebreak
 
 \begin{problem}
     Wörter und Sprachen
@@ -749,24 +762,24 @@ Gegeben sei das Alphabet \(\lambda = \set{ a, b, c }\).\\
  \(\set{\lambda ,a ,c ,b ,bc ,bca}  \)\\
 
 \end{solution}
-\begin{solution}[b]Gib eine Menge von maximal 5 Wörtern über dem Alphabet\(\sum\) so an, dass die Suffixe
+\begin{solution}[b]Gib eine Menge von maximal 5 Wörtern über dem Alphabet \(\Sigma\) so an, dass die Suffixe
 dieser Wörter genau aus den Wörtern\(\lambda\), a, b, c, ac, bb, cb, ccb bestehen\\
 \(M =\set{a, bb , ac, ccb}\)\\
 
 \end{solution}
-\begin{solution}[c]Gib ein Wort über dem Alphabet \(\lambda\) so an, dass die Anzahl der Teilwörter und die Summe
-der Anzahl der Präfixe und Suffixe gleich 10 ist\\
+\begin{solution}[c]Gib ein Wort über dem Alphabet \(\Sigma\) so an, dass die Anzahl der Teilwörter und die Summe
+der Anzahl der Präfixe und Suffixe gleich 10 ist.\\
 
-w=abca \( \in \lambda^* \)\\
+\( w= abca  \in \Sigma^* \)\\
 \end{solution}
 \pagebreak
 \begin{problem}
 Reguläre Ausdrücke
 \end{problem}
-Gegeben sei das Alphabet \(\lambda = \set{ a, b, c }\).\\
-\\
+Gegeben sei das Alphabet \(\Sigma = \set{ a, b, c }\).
+
 \begin{solution}[a]Gib die Sprache L(\(e_1\)) für den regulären Ausdruck \(e1 , a0a + ac (b + e)^* + d + cc^*\) an,ohne auf reguläre Ausdrücke zu verweisen. \\
-\(L(e_1)   \triangleq (w \in \sum^* \mid w \in {ac(b)^*,d,cc^*})\)
+\(L(e_1)   \triangleq (w \in \Sigma^* \mid w \in {ac(b)^*,d,cc^*})\)
 
 
 \end{solution}
@@ -809,7 +822,7 @@ Ordnen von Wörtern
 \begin{solution}
 Beweise per (Wort)Induktion das \( \forall w \in \sum^* . bin(w) \geq \vert w \vert_1 \) \\
 
-bin(w) kann nicht kleiner sein als \(\vert w \vert_1 \)da für jede 1 die in w enthalten ist mindestens 1 zum Wert von bin(w) hinzugefügt wird. die Funktion w ändert von der letzten Stelle nach vorne und verdoppelt bei jedem Schritt den Multiplikator von der Binärstelle und startet bei 1. Dadurch kann muss jede 1 in w mindestens 1 zur Entzahl hinzuaddieren.\\
+bin(w) kann nicht kleiner sein als \(\vert w \vert_1 \)da für jede 1 die in w enthalten ist mindestens 1 zum Wert von bin(w) hinzugefügt wird. Die Funktion w ändert von der letzten Stelle nach vorne und verdoppelt bei jedem Schritt den Multiplikator von der Binärstelle und startet bei 1. Dadurch muss jede 1 in w mindestens 1 zur Endzahl hinzuaddieren.\\
 Bsp. w=10110 
 
 \(\vert 10110 \vert_1 \) = 3\\
@@ -822,19 +835,6 @@ Bin(\(\lambda\))=0+16*1+8*0+4*1+2*1+1*0=22\\
 $22\geq 3$
 
 
-\end{solution}
-
-
-\begin{solution}[b]
-
-    \( f:D \rightarrow \mathbb{N} \) mit \( ((n \bmod 3) + 1) * 4 + 1 \)
-
-\end{solution}
-
-\begin{solution}[c]
-
-    Antwort: \( card(X) > card(Y) \)
-    
 \end{solution}
 
 \begin{problem}
@@ -975,17 +975,25 @@ $22\geq 3$
 
 \begin{solution}[a]
 
-    \( (q_1,bb) \vdash (q_2,b) \vdash (q_3,\lambda) \text{ da $q_3$ $\notin \{ q_2 \}$, ist bb $\notin L(M_3)$  } \) 
+    \( (q_1,bb) \vdash (q_2,b) \vdash (q_3,\lambda) \not \vdash \)
 
-    \( (q_1,ccbc) \vdash (q_0,cbc) \vdash (q_1,bc) \vdash (q_2,c) \vdash (q_2,\lambda) \text{ da $q_2$ $\in \{ q_2 \}$, ist ccbc $\in L(M_3)$  } \)
+    da $q_3$ $\notin \{ q_2 \}$, ist bb $\notin L(M_3)$  
+
+    \( (q_1,ccbc) \vdash (q_0,cbc) \vdash (q_1,bc) \vdash (q_2,c) \vdash (q_2,\lambda) \not \vdash \)
+    
+    da $q_2$ $\in \{ q_2 \}$, ist ccbc $\in L(M_3)$ 
     
 \end{solution}
 
 \begin{solution}[b]
     
-    \( (q_0,abc) \vdash (q_1,bc) \vdash (q_1,c) \vdash (q_2,\lambda) \text{ da $q_2$ $\in \{ q_0,q_2 \}$, ist abc $\in L(M_4)$} \)
+    \( (q_0,abc) \vdash (q_1,bc) \vdash (q_1,c) \vdash (q_2,\lambda)  \not \vdash \)
+    
+    da $q_2$ $\in \{ q_0,q_2 \}$, ist abc $\in L(M_4)$
 
-    \( (q_0,cbc) \vdash (q_2,bc) \vdash (q_2,c) \vdash (q_1,\lambda) \text{ da $q_1$ $\notin \{ q_0,q_2 \}$, ist cbc $\notin L(M_4)$ }\)
+    \( (q_0,cbc) \vdash (q_2,bc) \vdash (q_2,c) \vdash (q_1,\lambda) \not \vdash \)
+    
+    da $q_1$ $\notin \{ q_0,q_2 \}$, ist cbc $\notin L(M_4)$
     
 \end{solution}
 
@@ -997,7 +1005,7 @@ $22\geq 3$
 
 \begin{solution}[d]
 
-    \( L(M_4) = \{ (w \in \{ a,b,c \}^{*} \mid \exists x \in \{ b,c \}. \exists n \in \{ 0,1 \}, m \in \mathbb{N}. w = a^{n}x^{m} \land |w|_C \mod 2 = 1) \lor |w|=0 \} \)
+    \( L(M_4) = \{ w \in \{ a,b,c \}^{*} \mid (\exists x \in \{ b,c \}. \exists n \in \{ 0,1 \}, m \in \mathbb{N}. w = a^{n}x^{m} \land |w|_C \mod 2 = 1) \lor |w|=0 \} \)
     
 \end{solution}
 
@@ -1032,7 +1040,8 @@ $22\geq 3$
             (3) edge node {b} (4)
                 edge node {c} (5)
             (4) edge [right , bend right =20] node {b} (1)
-                edge [right , bend right =20] node {c} (5);
+                edge [right , bend right =20] node {c} (5)
+            (5) edge [loop below] node {b, c} (5);
 
         \end{tikzpicture}
     
